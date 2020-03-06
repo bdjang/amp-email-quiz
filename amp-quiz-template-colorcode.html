@@ -1,0 +1,359 @@
+<!-- This version is uses amp-bind and AMP.setState. At the bottom of the email, the results table displays the user's score color-coded -->
+
+<!DOCTYPE html>
+<html ⚡4email lang="en">
+<head>
+<meta charset="utf-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<style amp4email-boilerplate>body{visibility:hidden}</style>
+
+<style amp-custom>
+
+    /* LAYOUT STYLES */
+    .container {
+        font-family: Georgia, Times New Roman, Times, serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.65em;
+        margin: auto;
+        max-width: 500px;
+        padding: 40px 0 40px 0;
+    }
+    figcaption {
+        color: #666666;
+        font-size: 14px;
+        line-height: 1.5em;
+    }
+    figcaption span {
+        color: #999999;
+        font-size: 12px;
+    }
+
+    /* QUIZ */
+    #introText {
+        padding: 0 0 20px 0;
+    }
+    .quizModule {
+        border-top: 1px solid #f2f2f2;
+        padding: 20px 0 0 0;
+    }
+    .wrong h2, .red {
+        color: #e07778;
+    }
+    .right h2, .green {
+        color: #8ab98d;
+    }
+    .option {
+        padding: 0 0 20px 0;
+    }
+    .option h2 { /* Button CSS for both right/wrong */
+        background-color: #eaf2f9;
+        border-radius: 3px;
+        border: none;
+        font-weight: 400;
+        padding: 20px;
+    }
+    .option .right div { /* Answer explaination section */
+        padding: 0 20px 20px;
+        border-bottom: 1px solid #f2f2f2;;
+        border-left: 1px solid #f2f2f2;
+    }
+    .option section { /* Space between buttons */
+        margin: 20px 0;
+    }
+    section[role=button] h2 { /* Pre-select button font color */
+        color: #0a3f68;
+    }
+    section[role=button]:hover h2 { /* Hover button color */
+        background-color: #06365e;
+        color: #ffffff;
+    }
+
+    /* RESULTS */
+    #scoreTable {
+        border-top: 1px solid #f2f2f2;
+        padding: 20px 0 0 0;
+    }
+    #scoreTable {
+        text-align: center;
+    }
+    #scoreTable h2 {
+        font-weight: 400;
+    }
+    #scoreTable table {
+        width: 100%;
+    }
+    #scoreTable table tr td {
+        border: 1px solid #aaaaaa;
+    }
+
+</style>
+</head>
+
+    <body>
+
+        <!-- AMP SETSTATE -->
+        <amp-state id="resultsCSS">
+            <script type="application/json">
+                {
+                    "rtAns": {
+                        "style": "green"
+                    },
+                    "wrgAns": {
+                        "style": "red"
+                    }
+                }
+            </script>
+        </amp-state>
+        <!-- end amp setstate -->
+
+        <div class="container">
+
+            <!-- INTRO TEXT -->
+            <div id="introText" align="left">
+                <amp-img width="185" height="26" layout="responsive" src="https://dummyimage.com/370x52/f4f4f4/aaa" style="max-width: 185px;"></amp-img>
+                <h2>Sample AMP Email News Quiz</h2>
+                <figcaption>Compiled by BD <span>FEB. 27, 2020</span></figcaption>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae vero deleniti assumenda ducimus perspiciatis excepturi dolor est ad alias sint voluptatum velit tenetur voluptates optio quis suscipit quam, laborum illo!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus illum praesentium odio doloremque nesciunt cumque maiores repellat rerum quidem harum ipsam.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, laudantium nisi, animi placeat earum perspiciatis enim eveniet quod deserunt sapiente. Reprehenderit quibusdam cupiditate non molestias asperiores error enim fugit cum.</p>
+            </div>
+            <!-- end intro text -->
+
+            <!-- START QUIZ -->
+            <!-- QUESTION #1 -->
+            <div class="quizModule">
+                <h3>1 of 5</h3>
+                <amp-img width="500" height="333" layout="responsive" src="https://dummyimage.com/1000x666/f4f4f4/aaa" style="max-width: 500px;"></amp-img>
+                <figcaption>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Benjamin D.</span></figcaption>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, saepe nam necessitatibus aliquid?</p>
+            </div>
+            <div id="1q" class="option">
+                <!-- (1/2) Tap triggers the AMP.setState() method. This method sets the foo state variable. -->
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,AMP.setState({foo1: 'wrgAns',score1: '&#x2717;'})">
+                    <h2>Choice #1</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,AMP.setState({foo1: 'wrgAns',score1: '&#x2717;'})">
+                    <h2>Choice #2</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,AMP.setState({foo1: 'wrgAns',score1: '&#x2717;'})">
+                    <h2>Choice #3</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,AMP.setState({foo1: 'rtAns',score1: '&#10004;'})">
+                    <h2>Choice #4</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,AMP.setState({foo1: 'wrgAns',score1: '&#x2717;'})">
+                    <h2>Choice #5</h2>
+                </section>
+            </div>
+            <div id="1a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; Choice #1</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Choice #2</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Choice #3</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; Choice #4</h2>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <amp-img width="500" height="333" layout="responsive" src="https://dummyimage.com/1000x666/f4f4f4/aaa" style="max-width: 500px;"></amp-img>
+                        <figcaption>Lorem ipsum dolor sit amet, consectetur adipisicing. <span>Benjamin D.</span></figcaption>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Choice #5</h2>
+                </section>
+            </div>
+            <!-- end question #1 -->
+
+            <!-- QUESTION #2 -->
+            <div class="quizModule">
+                <h3>2 of 5</h3>
+                <p>Lorem ipsum dolor sit amet?</p>
+            </div>
+            <div id="2q" class="option">
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,AMP.setState({foo2: 'wrgAns',score2: '&#x2717;'})">
+                    <h2>Choice #1</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,AMP.setState({foo2: 'rtAns',score2: '&#10004;'})">
+                    <h2>Choice #2</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,AMP.setState({foo2: 'wrgAns',score2: '&#x2717;'})">
+                    <h2>Choice #3</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,AMP.setState({foo2: 'wrgAns',score2: '&#x2717;'})">
+                    <h2>Choice #4</h2>
+                </section>
+            </div>
+            <div id="2a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; Choice #1</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; Choice #2</h2>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo minima esse.</p>
+                        <amp-img width="500" height="333" layout="responsive" src="https://dummyimage.com/1000x666/f4f4f4/aaa" style="max-width: 500px;"></amp-img>
+                        <figcaption>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt iusto. <span>Benjamin D.</span></figcaption>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Choice #3</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Choice #4</h2>
+                </section>
+            </div>
+            <!-- end question #2 -->
+
+            <!-- QUESTION #3 -->
+            <div class="quizModule">
+                <h3>3 of 5</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing?</p>
+            </div>
+            <div id="3q" class="option">
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,AMP.setState({foo3: 'wrgAns',score3: '&#x2717;'})">
+                    <h2>Choice #1</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,AMP.setState({foo3: 'wrgAns',score3: '&#x2717;'})">
+                    <h2>Choice #2</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,AMP.setState({foo3: 'rtAns',score3: '&#10004;'})">
+                    <h2>Choice #3</h2>
+                </section>
+            </div>
+            <div id="3a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; Choice #1</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Choice #2</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; Choice #3</h2>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium sit at ipsum ducimus.</p>
+                        <amp-img width="500" height="333" layout="responsive" src="https://dummyimage.com/1000x666/f4f4f4/aaa" style="max-width: 500px;"></amp-img>
+                        <figcaption>Lorem ipsum dolor sit amet, consectetur adipisicing elit impedit! <span>Benjamin D.</span></figcaption>
+                    </div>
+                </section>
+            </div>
+            <!-- end question #3 -->
+
+            <!-- QUESTION #4 -->
+            <div class="quizModule">
+                <h3>4 of 5</h3>
+                <amp-img width="500" height="333" layout="responsive" src="https://dummyimage.com/1000x666/f4f4f4/aaa" style="max-width: 500px;"></amp-img>
+                <figcaption>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Benjamin D.</span></figcaption>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium magni magnam unde culpa rerum officiis?</p>
+            </div>
+            <div id="4q" class="option">
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,AMP.setState({foo4: 'rtAns',score4: '&#10004;'})">
+                    <h2>Choice #1</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,AMP.setState({foo4: 'wrgAns',score4: '&#x2717;'})">
+                    <h2>Choice #2</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,AMP.setState({foo4: 'wrgAns',score4: '&#x2717;'})">
+                    <h2>Choice #3</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,AMP.setState({foo4: 'wrgAns',score4: '&#x2717;'})">
+                    <h2>Choice #4</h2>
+                </section>
+            </div>
+            <div id="4a" class="option" hidden>
+                <section class="right">
+                    <h2>&#10004; Choice #1</h2>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro delectus atque temporibus perspiciatis inventore officiis in fuga. Aspernatur neque rerum distinctio qui ea, laborum accusamus.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero et excepturi sint delectus quos, dignissimos quis animi aspernatur tempora assumenda fugiat.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis itaque sed quis culpa, praesentium non nemo, ex quae!</p>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Choice #2</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Choice #3</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Choice #4</h2>
+                </section>
+            </div>
+            <!-- end question #4 -->
+
+            <!-- QUESTION #5 -->
+            <div class="quizModule">
+                <h3>5 of 5</h3>
+                <amp-img width="500" height="333" layout="responsive" src="https://dummyimage.com/1000x666/f4f4f4/aaa" style="max-width: 500px;"></amp-img>
+                <figcaption>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nemo, sunt eum ab explicabo. <span>Benjamin D.</span></figcaption>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error dolore autem accusantium excepturi, a mollitia. Pariatur nobis ipsa facere laudantium?</p>
+            </div>
+            <div id="5q" class="option">
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,AMP.setState({foo5: 'wrgAns',score5: '&#x2717;'})">
+                    <h2>Choice #1</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,AMP.setState({foo5: 'wrgAns',score5: '&#x2717;'})">
+                    <h2>Choice #2</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,AMP.setState({foo5: 'wrgAns',score5: '&#x2717;'})">
+                    <h2>Choice #3</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,AMP.setState({foo5: 'rtAns',score5: '&#10004;'})">
+                    <h2>Choice #4</h2>
+                </section>
+            </div>
+            <div id="5a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; Choice #1</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Choice #2</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Choice #3</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; Choice #4</h2>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quo eligendi, voluptate dolorem sed, nostrum cupiditate nulla facere cum sunt vitae qui, inventore sint perferendis doloribus culpa! Blanditiis, nobis ex.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur modi explicabo quis voluptatibus ad animi aliquid quos. Ipsa nulla, sint labore dolorum distinctio!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia in nostrum saepe labore fugit ipsa, neque cupiditate iure, facere rerum.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore minima nam officia officiis, rerum expedita? Fugit omnis repellendus minima itaque nulla illum, quae, tempore! Libero dolorum error voluptas.</p>
+                        <amp-img width="500" height="333" layout="responsive" src="https://dummyimage.com/1000x666/f4f4f4/aaa" style="max-width: 500px;"></amp-img>
+                        <figcaption>Lorem ipsum dolor sit amet, consectetur. <span>Benjamin D.</span></figcaption>
+                    </div>
+                </section>
+            </div>
+            <!-- end question #5 -->
+            <!-- quiz end -->
+
+            <!-- SCORE -->
+            <div id="scoreTable">
+                <h2>Your Quiz Results:</h2>
+                <table>
+                    <tr>
+                        <td>Q1</td>
+                        <td>Q2</td>
+                        <td>Q3</td>
+                        <td>Q4</td>
+                        <td>Q5</td>
+                    </tr>
+                    <tr>
+                        <!-- (2/2) The class attribute is bound to the expression below. It references the defined data (amp-state resultsCSS id) from a JSON object. It updates the class -->
+                        <td [text]="score1" [class]="resultsCSS[foo1].style">Q1</td>
+                        <td [text]="score2" [class]="resultsCSS[foo2].style">Q2</td>
+                        <td [text]="score3" [class]="resultsCSS[foo3].style">Q3</td>
+                        <td [text]="score4" [class]="resultsCSS[foo4].style">Q4</td>
+                        <td [text]="score5" [class]="resultsCSS[foo5].style">Q5</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- end score -->
+
+        </div>
+
+    </body>
+</html>
