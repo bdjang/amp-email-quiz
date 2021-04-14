@@ -1,0 +1,1105 @@
+<!--
+- This version is uses amp-bind and AMP.setState. At the bottom of the email, the results table displays the user's score color-coded
+-->
+
+<!DOCTYPE html>
+<html ⚡4email data-css-strict lang="en">
+<head>
+<meta charset="utf-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<style amp4email-boilerplate>body{visibility:hidden}</style>
+
+<style amp-custom>
+
+    /* LAYOUT STYLES */
+    .container {
+        font-family: Georgia, Times New Roman, Times, serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.65em;
+        margin: auto;
+        max-width: 550px;
+        padding: 40px 0 40px 0;
+    }
+    figcaption {
+        color: #666666;
+        font-size: 14px;
+        line-height: 1.5em;
+    }
+    figcaption span {
+        color: #999999;
+        font-size: 12px;
+    }
+
+    /* QUIZ */
+    #introText {
+        padding: 0 0 20px 0;
+    }
+    .quizModule {
+        border-top: 1px solid #f2f2f2;
+        padding: 20px 0 0 0;
+    }
+    .wrong h2, .red {
+        color: #e07778;
+    }
+    .right h2, .green {
+        color: #8ab98d;
+    }
+    .option {
+        padding: 0 0 20px 0;
+    }
+    .option h2 { /* Button CSS for both right/wrong */
+        background-color: #eaf2f9;
+        border-radius: 3px;
+        border: none;
+        font-weight: 400;
+        line-height: 1.25em;
+        padding: 20px;
+    }
+    .option .right div { /* Answer explaination section */
+        padding: 0 20px 20px;
+        border-bottom: 1px solid #f2f2f2;;
+        border-left: 1px solid #f2f2f2;
+    }
+    .option section { /* Space between buttons */
+        margin: 20px 0;
+    }
+    section[role=button] h2 { /* Pre-select button font color */
+        color: #0a3f68;
+    }
+    section[role=button]:hover h2 { /* Hover button color */
+        background-color: #06365e;
+        color: #ffffff;
+    }
+
+    /* RESULTS */
+    #scoreTable {
+        border-top: 1px solid #f2f2f2;
+        padding: 20px 0 0 0;
+        text-align: center;
+    }
+    #scoreTable h2 {
+        font-weight: 400;
+    }
+    #scoreTable table {
+        width: 100%;
+    }
+    #scoreTable table tr td {
+        border: 1px solid #aaaaaa;
+    }
+
+</style>
+</head>
+
+    <body>
+
+        <!-- AMP SETSTATE -->
+        <amp-state id="resultsCSS">
+            <script type="application/json">
+                {
+                    "rtAns": {
+                        "style": "green"
+                    },
+                    "wrgAns": {
+                        "style": "red"
+                    }
+                }
+            </script>
+        </amp-state>
+        <!-- end amp setstate -->
+
+        <div class="container">
+
+            <!-- INTRO TEXT -->
+            <div id="introText">
+                <amp-img width="550" height="205" layout="responsive" src="https://www.uscis.gov/sites/default/files/images/article-citizenship/OoC_NatzTest_DigiSignage_763x284_x2.png" style="max-width: 550px;"></amp-img>
+                <h2>Civics Practice Test</h2>
+                <p>Take a civics practice test below or on the <a href="https://my.uscis.gov/en/prep/test/civics/view">web</a>.</p>
+                <p>This quiz was built using <a href="https://amp.dev/about/email/">AMP for Email</a> and can be taken entirely within an email.</p>
+            </div>
+            <!-- end intro text -->
+
+            <!-- START QUIZ -->
+            <!-- QUESTION #1 -->
+            <div class="quizModule">
+                <h3>1 of 10</h3>
+                <p>Under our Constitution, some powers belong to the federal government. What is one power of the federal government?</p>
+            </div>
+            <div id="1q" class="option">
+                <!-- (1/2) Tap triggers the AMP.setState() method. This method sets the foo state variable. -->
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,AMP.setState({foo1: 'rtAns',score1: '&#10004;'})">
+                    <h2>to declare war</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,AMP.setState({foo1: 'wrgAns',score1: '&#x2717;'})">
+                    <h2>to provide schooling and education</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,AMP.setState({foo1: 'wrgAns',score1: '&#x2717;'})">
+                    <h2>to provide protection (police)</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,AMP.setState({foo1: 'wrgAns',score1: '&#x2717;'})">
+                    <h2>to issue driver's licenses</h2>
+                </section>
+            </div>
+            <div id="1a" class="option" hidden>
+                <section class="right">
+                    <h2>&#10004; to declare war</h2>
+                    <div>
+                        <p>The powers of the United States government are listed in the Constitution. The powers of the federal government include the power to print money, create an army, and make treaties. Another is the power to declare war. The president can ask Congress for a declaration of war. In 1941, after Japan attacked Pearl Harbor, President Franklin D. Roosevelt asked Congress to declare war. Congress voted to declare war and the United States entered World War II.</p>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; to provide schooling and education</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; to provide protection (police)</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; to issue driver's licenses</h2>
+                </section>
+            </div>
+            <!-- end question #1 -->
+
+            <!-- QUESTION #2 -->
+            <div class="quizModule">
+                <h3>2 of 10</h3>
+                <p>What <span style="font-style: italic;">are</span> two rights of everyone living in the United States?</p>
+            </div>
+            <div id="2q" class="option">
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,AMP.setState({foo2: 'wrgAns',score2: '&#x2717;'})">
+                    <h2>freedom of speech and freedom to run for president</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,AMP.setState({foo2: 'wrgAns',score2: '&#x2717;'})">
+                    <h2>freedom of religion and freedom to make treaties with other countries</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,AMP.setState({foo2: 'wrgAns',score2: '&#x2717;'})">
+                    <h2>freedom to petition the government and freedom to disobey traffic laws</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,AMP.setState({foo2: 'rtAns',score2: '&#10004;'})">
+                    <h2>freedom of speech and freedom of religion</h2>
+                </section>
+            </div>
+            <div id="2a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; freedom of speech and freedom to run for president</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; freedom of religion and freedom to make treaties with other countries</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; freedom to petition the government and freedom to disobey traffic laws</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; freedom of speech and freedom of religion</h2>
+                    <div>
+                        <p>Individual freedoms, or rights, are protected in the United States. Many of these rights are for everyone. For example, we all have the right to free expression and free speech. We have the right to freedom of assembly. We can meet peacefully with other people. We have the right to petition the government. We can ask the government to change or correct a problem. We have the right to practice religion as we choose. We have the right to practice no religion at all. This is freedom of religion. With limits, we also have the right to bear arms. These rights are for everyone living in the United States.</p>
+                    </div>
+                </section>
+            </div>
+            <!-- end question #2 -->
+
+            <!-- QUESTION #3 -->
+            <div class="quizModule">
+                <h3>3 of 10</h3>
+                <p>What did Susan B. Anthony do?</p>
+            </div>
+            <div id="3q" class="option">
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,AMP.setState({foo3: 'wrgAns',score3: '&#x2717;'})">
+                    <h2>made the first flag of the United States</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,AMP.setState({foo3: 'wrgAns',score3: '&#x2717;'})">
+                    <h2>founded the Red Cross</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,AMP.setState({foo3: 'rtAns',score3: '&#10004;'})">
+                    <h2>fought for women's rights</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,AMP.setState({foo3: 'wrgAns',score3: '&#x2717;'})">
+                    <h2>the first woman elected to the House of Representatives</h2>
+                </section>
+            </div>
+            <div id="3a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; made the first flag of the United States</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; founded the Red Cross</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; fought for women's rights</h2>
+                    <div>
+                        <p>Susan B. Anthony was an important leader in the women's rights movement. She fought for women's rights and for civil rights. She gave speeches to support women's rights, especially the right to vote. In 1872, Susan B. Anthony tried to vote and had to go to jail. Susan B. Anthony died in 1906. Women still did not have the right to vote all over the United States. Other people fought for women's rights. In 1920, the Nineteenth Amendment was added to the Constitution. It gave women the right to vote. Susan B. Anthony is an important leader in American history.</p>
+                        <amp-img width="200" height="240" layout="responsive" src="https://myuscis-prod-practice-test-images.s3.amazonaws.com/production/practice_test_images/77/Q77.png" style="max-width: 200px;"></amp-img>
+                        <figcaption>Susan B. Anthony <span>Library of Congress</span></figcaption>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; the first woman elected to the House of Representatives</h2>
+                </section>
+            </div>
+            <!-- end question #3 -->
+
+            <!-- QUESTION #4 -->
+            <div class="quizModule">
+                <h3>4 of 10</h3>
+                <p>What is freedom of religion?</p>
+            </div>
+            <div id="4q" class="option">
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,AMP.setState({foo4: 'wrgAns',score4: '&#x2717;'})">
+                    <h2>You must choose a religion.</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,AMP.setState({foo4: 'wrgAns',score4: '&#x2717;'})">
+                    <h2>You can't choose the time you practice your religion.</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,AMP.setState({foo4: 'wrgAns',score4: '&#x2717;'})">
+                    <h2>No one can practice a religion.</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,AMP.setState({foo4: 'rtAns',score4: '&#10004;'})">
+                    <h2>You can practice any religion, or not practice a religion.</h2>
+                </section>
+            </div>
+            <div id="4a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; You must choose a religion.</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; You can't choose the time you practice your religion.</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; No one can practice a religion.</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; You can practice any religion, or not practice a religion.</h2>
+                    <div>
+                        <p>Freedom of religion is the ability to practice any religion, or not practice a religion. Freedom to practice different religions is part of American life. It is part of the First Amendment to the Constitution. Everyone living in the United States has religious freedom. They can choose to practice any religion, or not practice a religion.</p>
+                    </div>
+                </section>
+            </div>
+            <!-- end question #4 -->
+
+            <!-- QUESTION #5 -->
+            <div class="quizModule">
+                <h3>5 of 10</h3>
+                <p>What is one responsibility that is only for United States citizens?</p>
+            </div>
+            <div id="5q" class="option">
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,AMP.setState({foo5: 'rtAns',score5: '&#10004;'})">
+                    <h2>serve on a jury</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,AMP.setState({foo5: 'wrgAns',score5: '&#x2717;'})">
+                    <h2>obey the law</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,AMP.setState({foo5: 'wrgAns',score5: '&#x2717;'})">
+                    <h2>pay taxes</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,AMP.setState({foo5: 'wrgAns',score5: '&#x2717;'})">
+                    <h2>be respectful of others</h2>
+                </section>
+            </div>
+            <div id="5a" class="option" hidden>
+                <section class="right">
+                    <h2>&#10004; serve on a jury</h2>
+                    <div>
+                        <p>United States citizens vote in federal elections and serve on juries. It is the responsibility of United States citizens to vote in federal elections. Voting is important. However, there is no law that says citizens must vote. It is also the responsibility of citizens to serve on a jury when they are asked. If a citizen gets a court letter to serve on a jury, the person must go. A jury is a group of citizens in a courtroom that listen to a trial. The jury decides the outcome of the trial.</p>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; obey the law</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; pay taxes</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; be respectful of others</h2>
+                </section>
+            </div>
+            <!-- end question #5 -->
+
+            <!-- QUESTION #6 -->
+            <div class="quizModule">
+                <h3>6 of 10</h3>
+                <p>The Federalist Papers supported the passage of the U.S. Constitution. Name <span style="font-style: italic;">one</span> of the writers.</p>
+            </div>
+            <div id="6q" class="option">
+                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,AMP.setState({foo6: 'rtAns',score6: '&#10004;'})">
+                    <h2>James Madison</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,AMP.setState({foo6: 'wrgAns',score6: '&#x2717;'})">
+                    <h2>George Washington</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,AMP.setState({foo6: 'wrgAns',score6: '&#x2717;'})">
+                    <h2>Thomas Jefferson</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,AMP.setState({foo6: 'wrgAns',score6: '&#x2717;'})">
+                    <h2>John Adams</h2>
+                </section>
+            </div>
+            <div id="6a" class="option" hidden>
+                <section class="right">
+                    <h2>&#10004; James Madison</h2>
+                    <div>
+                        <p>James Madison, Alexander Hamilton, and John Jay wrote the Federalist Papers. The U.S. Constitution was written at the Constitutional Convention in 1787. People at the Constitutional Convention decided how the government should work. Then James Madison, Alexander Hamilton, and John Jay wrote the Federalist Papers. The Federalist Papers explained the new government. They said that the new United States needed the Constitution. Newspapers all over the United States published the Federalist Papers.</p>
+                        <amp-img width="300" height="300" layout="responsive" src="https://www.whitehouse.gov/wp-content/uploads/2021/01/04_james_madison.jpg" style="max-width: 300px;"></amp-img>
+                        <figcaption>James Madison <span>Library of Congress</span></figcaption>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; George Washington</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Thomas Jefferson</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; John Adams</h2>
+                </section>
+            </div>
+            <!-- end question #6 -->
+
+            <!-- QUESTION #7 -->
+            <div class="quizModule">
+                <h3>7 of 10</h3>
+                <p>The House of Representatives has how many voting members?</p>
+            </div>
+            <div id="7q" class="option">
+                <!-- (1/2) Tap triggers the AMP.setState() method. This method sets the foo state variable. -->
+                <section role="button" tabindex="0" on="tap:7q.hide,7a.show,AMP.setState({foo7: 'wrgAns',score7: '&#x2717;'})">
+                    <h2>one hundred (100)</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:7q.hide,7a.show,AMP.setState({foo7: 'wrgAns',score7: '&#x2717;'})">
+                    <h2>four hundred forty-one (441)</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:7q.hide,7a.show,AMP.setState({foo7: 'wrgAns',score7: '&#x2717;'})">
+                    <h2>two hundred (200)</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:7q.hide,7a.show,AMP.setState({foo7: 'rtAns',score7: '&#10004;'})">
+                    <h2>four hundred thirty-five (435)</h2>
+                </section>
+            </div>
+            <div id="7a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; one hundred (100)</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; four hundred forty-one (441)</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; two hundred (200)</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; four hundred thirty-five (435)</h2>
+                    <div>
+                        <p>There are 435 voting members in the House of Representatives. Each state is divided into districts. Each district elects one representative. California is the state with the most people. It has more than 50 representatives. States with fewer people, like Alaska, have only one representative.</p>
+                        <amp-img width="400" height="267" layout="responsive" src="https://www.history.com/.image/t_share/MTU3ODc5MDg3MjM3MTEzMTYx/donald-trump-delivers-address-to-joint-session-of-congress.jpg" style="max-width: 400px;"></amp-img>
+                        <figcaption>House of Representatives <span>Library of Congress</span></figcaption>
+                    </div>
+                </section>
+            </div>
+            <!-- end question #7 -->
+
+            <!-- QUESTION #8 -->
+            <div class="quizModule">
+                <h3>8 of 10</h3>
+                <amp-img width="300" height="356" layout="responsive" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/United_States_Declaration_of_Independence.jpg/647px-United_States_Declaration_of_Independence.jpg" style="max-width: 300px;"></amp-img>
+                <figcaption>Declaration of Independence <span>Library of Congress</span></figcaption>
+                <p>When was the Declaration of Independence adopted?</p>
+            </div>
+            <div id="8q" class="option">
+                <section role="button" tabindex="0" on="tap:8q.hide,8a.show,AMP.setState({foo8: 'wrgAns',score8: '&#x2717;'})">
+                    <h2>December 7, 1787</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:8q.hide,8a.show,AMP.setState({foo8: 'wrgAns',score8: '&#x2717;'})">
+                    <h2>March 4, 1789</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:8q.hide,8a.show,AMP.setState({foo8: 'rtAns',score8: '&#10004;'})">
+                    <h2>July 4, 1776</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:8q.hide,8a.show,AMP.setState({foo8: 'wrgAns',score8: '&#x2717;'})">
+                    <h2>July 4, 1789</h2>
+                </section>
+            </div>
+            <div id="8a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; December 7, 1787</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; March 4, 1789</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; July 4, 1776</h2>
+                    <div>
+                        <p>On July 4, 1776, the colonists adopted the Declaration of Independence. Thomas Jefferson wrote the Declaration of Independence. It said the colonies were free from Great Britain. Representatives from the 13 colonies signed the Declaration. July 4, 1776, is a special date in American history. It is the day that the United States became an independent country, separate from Britain.</p>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; July 4, 1789</h2>
+                </section>
+            </div>
+            <!-- end question #8 -->
+
+            <!-- QUESTION #9 -->
+            <div class="quizModule">
+                <h3>9 of 10</h3>
+                <p>What is the name of the national anthem?</p>
+            </div>
+            <div id="9q" class="option">
+                <section role="button" tabindex="0" on="tap:9q.hide,9a.show,AMP.setState({foo9: 'rtAns',score9: '&#10004;'})">
+                    <h2>The Star-Spangled Banner</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:9q.hide,9a.show,AMP.setState({foo9: 'wrgAns',score9: '&#x2717;'})">
+                    <h2>America the Beautiful</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:9q.hide,9a.show,AMP.setState({foo9: 'wrgAns',score9: '&#x2717;'})">
+                    <h2>My Country Tis of Thee</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:9q.hide,9a.show,AMP.setState({foo9: 'wrgAns',score9: '&#x2717;'})">
+                    <h2>God Bless the U.S.A.</h2>
+                </section>
+            </div>
+            <div id="9a" class="option" hidden>
+                <section class="right">
+                    <h2>&#10004; The Star-Spangled Banner</h2>
+                    <div>
+                        <p>"The Star-Spangled Banner" is the name of our national anthem. The song is about the United States flag. In the War of 1812, the United States fought the British. One night during the war, British ships attacked Fort McHenry in Baltimore. Bombs exploded all night. An American man named Francis Scott Key watched the battle from a ship. He worried that the United States might lose the battle. The next morning, he saw the United States' flag flying in the wind. He knew that the United States won the battle. Then he wrote the words to "The Star-Spangled Banner." "The Star-Spangled Banner" is now the national anthem of the United States.</p>
+                        <amp-img width="200" height="240" layout="responsive" src="https://myuscis-prod-practice-test-images.s3.amazonaws.com/production/practice_test_images/98/Q98.png" style="max-width: 200px;"></amp-img>
+                        <figcaption>Francis Scott Key <span>Library of Congress</span></figcaption>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; America the Beautiful</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; My Country Tis of Thee</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; God Bless the U.S.A.</h2>
+                </section>
+            </div>
+            <!-- end question #9 -->
+
+            <!-- QUESTION #10 -->
+            <div class="quizModule">
+                <h3>10 of 10</h3>
+                <p>What is one right or freedom from the First Amendment?</p>
+            </div>
+            <div id="10q" class="option">
+                <section role="button" tabindex="0" on="tap:10q.hide,10a.show,AMP.setState({foo10: 'wrgAns',score10: '&#x2717;'})">
+                    <h2>trial by jury</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:10q.hide,10a.show,AMP.setState({foo10: 'rtAns',score10: '&#10004;'})">
+                    <h2>speech</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:10q.hide,10a.show,AMP.setState({foo10: 'wrgAns',score10: '&#x2717;'})">
+                    <h2>to vote</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:10q.hide,10a.show,AMP.setState({foo10: 'wrgAns',score10: '&#x2717;'})">
+                    <h2>to bear arms</h2>
+                </section>
+            </div>
+            <div id="10a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; trial by jury</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; speech</h2>
+                    <div>
+                        <p>The First Amendment protects the right of speech, assembly, and press. It protects the right to petition the government and freedom of religion. Democracy works only if people can talk to each other and share their opinions. The First Amendment of the U.S. Constitution protects these rights.</p>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; to vote</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; to bear arms</h2>
+                </section>
+            </div>
+            <!-- end question #10 -->
+            <!-- quiz end -->
+
+            <!-- SCORE -->
+            <div id="scoreTable">
+                <h2>Your Quiz Results:</h2>
+                <table>
+                    <tr>
+                        <td>Q1</td>
+                        <td>Q2</td>
+                        <td>Q3</td>
+                        <td>Q4</td>
+                        <td>Q5</td>
+                        <td>Q6</td>
+                        <td>Q7</td>
+                        <td>Q8</td>
+                        <td>Q9</td>
+                        <td>Q10</td>
+                    </tr>
+                    <tr>
+                        <!-- (2/2) The class attribute is bound to the expression below. It references the defined data (amp-state resultsCSS id) from a JSON object. It updates the class -->
+                        <td [text]="score1" [class]="resultsCSS[foo1].style">Q1</td>
+                        <td [text]="score2" [class]="resultsCSS[foo2].style">Q2</td>
+                        <td [text]="score3" [class]="resultsCSS[foo3].style">Q3</td>
+                        <td [text]="score4" [class]="resultsCSS[foo4].style">Q4</td>
+                        <td [text]="score5" [class]="resultsCSS[foo5].style">Q5</td>
+                        <td [text]="score6" [class]="resultsCSS[foo6].style">Q6</td>
+                        <td [text]="score7" [class]="resultsCSS[foo7].style">Q7</td>
+                        <td [text]="score8" [class]="resultsCSS[foo8].style">Q8</td>
+                        <td [text]="score9" [class]="resultsCSS[foo9].style">Q9</td>
+                        <td [text]="score10" [class]="resultsCSS[foo10].style">Q10</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- end score -->
+
+        </div>
+
+    </body>
+</html><!--
+- This version is uses amp-bind and AMP.setState. At the bottom of the email, the results table displays the user's score color-coded
+-->
+
+<!DOCTYPE html>
+<html ⚡4email lang="en">
+<head>
+<meta charset="utf-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<style amp4email-boilerplate>body{visibility:hidden}</style>
+
+<style amp-custom>
+
+    /* LAYOUT STYLES */
+    .container {
+        font-family: Georgia, Times New Roman, Times, serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.65em;
+        margin: auto;
+        max-width: 550px;
+        padding: 40px 0 40px 0;
+    }
+    figcaption {
+        color: #666666;
+        font-size: 14px;
+        line-height: 1.5em;
+    }
+    figcaption span {
+        color: #999999;
+        font-size: 12px;
+    }
+
+    /* QUIZ */
+    #introText {
+        padding: 0 0 20px 0;
+    }
+    .quizModule {
+        border-top: 1px solid #f2f2f2;
+        padding: 20px 0 0 0;
+    }
+    .wrong h2, .red {
+        color: #e07778;
+    }
+    .right h2, .green {
+        color: #8ab98d;
+    }
+    .option {
+        padding: 0 0 20px 0;
+    }
+    .option h2 { /* Button CSS for both right/wrong */
+        background-color: #eaf2f9;
+        border-radius: 3px;
+        border: none;
+        font-weight: 400;
+        line-height: 1.25em;
+        padding: 20px;
+    }
+    .option .right div { /* Answer explaination section */
+        padding: 0 20px 20px;
+        border-bottom: 1px solid #f2f2f2;;
+        border-left: 1px solid #f2f2f2;
+    }
+    .option section { /* Space between buttons */
+        margin: 20px 0;
+    }
+    section[role=button] h2 { /* Pre-select button font color */
+        color: #0a3f68;
+    }
+    section[role=button]:hover h2 { /* Hover button color */
+        background-color: #06365e;
+        color: #ffffff;
+    }
+
+    /* RESULTS */
+    #scoreTable {
+        border-top: 1px solid #f2f2f2;
+        padding: 20px 0 0 0;
+        text-align: center;
+    }
+    #scoreTable h2 {
+        font-weight: 400;
+    }
+    #scoreTable table {
+        width: 100%;
+    }
+    #scoreTable table tr td {
+        border: 1px solid #aaaaaa;
+    }
+
+</style>
+</head>
+
+    <body>
+
+        <!-- AMP SETSTATE -->
+        <amp-state id="resultsCSS">
+            <script type="application/json">
+                {
+                    "rtAns": {
+                        "style": "green"
+                    },
+                    "wrgAns": {
+                        "style": "red"
+                    }
+                }
+            </script>
+        </amp-state>
+        <!-- end amp setstate -->
+
+        <div class="container">
+
+            <!-- INTRO TEXT -->
+            <div id="introText">
+                <amp-img width="550" height="205" layout="responsive" src="https://www.uscis.gov/sites/default/files/images/article-citizenship/OoC_NatzTest_DigiSignage_763x284_x2.png" style="max-width: 550px;"></amp-img>
+                <h2>Civics Practice Test</h2>
+                <p>Take a civics practice test below or on the <a href="https://my.uscis.gov/en/prep/test/civics/view">web</a>.</p>
+                <p>This quiz was built using <a href="https://amp.dev/about/email/">AMP for Email</a> and can be taken entirely within an email.</p>
+            </div>
+            <!-- end intro text -->
+
+            <!-- START QUIZ -->
+            <!-- QUESTION #1 -->
+            <div class="quizModule">
+                <h3>1 of 10</h3>
+                <p>Under our Constitution, some powers belong to the federal government. What is one power of the federal government?</p>
+            </div>
+            <div id="1q" class="option">
+                <!-- (1/2) Tap triggers the AMP.setState() method. This method sets the foo state variable. -->
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,AMP.setState({foo1: 'rtAns',score1: '&#10004;'})">
+                    <h2>to declare war</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,AMP.setState({foo1: 'wrgAns',score1: '&#x2717;'})">
+                    <h2>to provide schooling and education</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,AMP.setState({foo1: 'wrgAns',score1: '&#x2717;'})">
+                    <h2>to provide protection (police)</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,AMP.setState({foo1: 'wrgAns',score1: '&#x2717;'})">
+                    <h2>to issue driver's licenses</h2>
+                </section>
+            </div>
+            <div id="1a" class="option" hidden>
+                <section class="right">
+                    <h2>&#10004; to declare war</h2>
+                    <div>
+                        <p>The powers of the United States government are listed in the Constitution. The powers of the federal government include the power to print money, create an army, and make treaties. Another is the power to declare war. The president can ask Congress for a declaration of war. In 1941, after Japan attacked Pearl Harbor, President Franklin D. Roosevelt asked Congress to declare war. Congress voted to declare war and the United States entered World War II.</p>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; to provide schooling and education</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; to provide protection (police)</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; to issue driver's licenses</h2>
+                </section>
+            </div>
+            <!-- end question #1 -->
+
+            <!-- QUESTION #2 -->
+            <div class="quizModule">
+                <h3>2 of 10</h3>
+                <p>What <span style="font-style: italic;">are</span> two rights of everyone living in the United States?</p>
+            </div>
+            <div id="2q" class="option">
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,AMP.setState({foo2: 'wrgAns',score2: '&#x2717;'})">
+                    <h2>freedom of speech and freedom to run for president</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,AMP.setState({foo2: 'wrgAns',score2: '&#x2717;'})">
+                    <h2>freedom of religion and freedom to make treaties with other countries</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,AMP.setState({foo2: 'wrgAns',score2: '&#x2717;'})">
+                    <h2>freedom to petition the government and freedom to disobey traffic laws</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,AMP.setState({foo2: 'rtAns',score2: '&#10004;'})">
+                    <h2>freedom of speech and freedom of religion</h2>
+                </section>
+            </div>
+            <div id="2a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; freedom of speech and freedom to run for president</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; freedom of religion and freedom to make treaties with other countries</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; freedom to petition the government and freedom to disobey traffic laws</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; freedom of speech and freedom of religion</h2>
+                    <div>
+                        <p>Individual freedoms, or rights, are protected in the United States. Many of these rights are for everyone. For example, we all have the right to free expression and free speech. We have the right to freedom of assembly. We can meet peacefully with other people. We have the right to petition the government. We can ask the government to change or correct a problem. We have the right to practice religion as we choose. We have the right to practice no religion at all. This is freedom of religion. With limits, we also have the right to bear arms. These rights are for everyone living in the United States.</p>
+                    </div>
+                </section>
+            </div>
+            <!-- end question #2 -->
+
+            <!-- QUESTION #3 -->
+            <div class="quizModule">
+                <h3>3 of 10</h3>
+                <p>What did Susan B. Anthony do?</p>
+            </div>
+            <div id="3q" class="option">
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,AMP.setState({foo3: 'wrgAns',score3: '&#x2717;'})">
+                    <h2>made the first flag of the United States</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,AMP.setState({foo3: 'wrgAns',score3: '&#x2717;'})">
+                    <h2>founded the Red Cross</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,AMP.setState({foo3: 'rtAns',score3: '&#10004;'})">
+                    <h2>fought for women's rights</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,AMP.setState({foo3: 'wrgAns',score3: '&#x2717;'})">
+                    <h2>the first woman elected to the House of Representatives</h2>
+                </section>
+            </div>
+            <div id="3a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; made the first flag of the United States</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; founded the Red Cross</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; fought for women's rights</h2>
+                    <div>
+                        <p>Susan B. Anthony was an important leader in the women's rights movement. She fought for women's rights and for civil rights. She gave speeches to support women's rights, especially the right to vote. In 1872, Susan B. Anthony tried to vote and had to go to jail. Susan B. Anthony died in 1906. Women still did not have the right to vote all over the United States. Other people fought for women's rights. In 1920, the Nineteenth Amendment was added to the Constitution. It gave women the right to vote. Susan B. Anthony is an important leader in American history.</p>
+                        <amp-img width="200" height="240" layout="responsive" src="https://myuscis-prod-practice-test-images.s3.amazonaws.com/production/practice_test_images/77/Q77.png" style="max-width: 200px;"></amp-img>
+                        <figcaption>Susan B. Anthony <span>Library of Congress</span></figcaption>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; the first woman elected to the House of Representatives</h2>
+                </section>
+            </div>
+            <!-- end question #3 -->
+
+            <!-- QUESTION #4 -->
+            <div class="quizModule">
+                <h3>4 of 10</h3>
+                <p>What is freedom of religion?</p>
+            </div>
+            <div id="4q" class="option">
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,AMP.setState({foo4: 'wrgAns',score4: '&#x2717;'})">
+                    <h2>You must choose a religion.</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,AMP.setState({foo4: 'wrgAns',score4: '&#x2717;'})">
+                    <h2>You can't choose the time you practice your religion.</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,AMP.setState({foo4: 'wrgAns',score4: '&#x2717;'})">
+                    <h2>No one can practice a religion.</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,AMP.setState({foo4: 'rtAns',score4: '&#10004;'})">
+                    <h2>You can practice any religion, or not practice a religion.</h2>
+                </section>
+            </div>
+            <div id="4a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; You must choose a religion.</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; You can't choose the time you practice your religion.</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; No one can practice a religion.</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; You can practice any religion, or not practice a religion.</h2>
+                    <div>
+                        <p>Freedom of religion is the ability to practice any religion, or not practice a religion. Freedom to practice different religions is part of American life. It is part of the First Amendment to the Constitution. Everyone living in the United States has religious freedom. They can choose to practice any religion, or not practice a religion.</p>
+                    </div>
+                </section>
+            </div>
+            <!-- end question #4 -->
+
+            <!-- QUESTION #5 -->
+            <div class="quizModule">
+                <h3>5 of 10</h3>
+                <p>What is one responsibility that is only for United States citizens?</p>
+            </div>
+            <div id="5q" class="option">
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,AMP.setState({foo5: 'rtAns',score5: '&#10004;'})">
+                    <h2>serve on a jury</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,AMP.setState({foo5: 'wrgAns',score5: '&#x2717;'})">
+                    <h2>obey the law</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,AMP.setState({foo5: 'wrgAns',score5: '&#x2717;'})">
+                    <h2>pay taxes</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,AMP.setState({foo5: 'wrgAns',score5: '&#x2717;'})">
+                    <h2>be respectful of others</h2>
+                </section>
+            </div>
+            <div id="5a" class="option" hidden>
+                <section class="right">
+                    <h2>&#10004; serve on a jury</h2>
+                    <div>
+                        <p>United States citizens vote in federal elections and serve on juries. It is the responsibility of United States citizens to vote in federal elections. Voting is important. However, there is no law that says citizens must vote. It is also the responsibility of citizens to serve on a jury when they are asked. If a citizen gets a court letter to serve on a jury, the person must go. A jury is a group of citizens in a courtroom that listen to a trial. The jury decides the outcome of the trial.</p>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; obey the law</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; pay taxes</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; be respectful of others</h2>
+                </section>
+            </div>
+            <!-- end question #5 -->
+
+            <!-- QUESTION #6 -->
+            <div class="quizModule">
+                <h3>6 of 10</h3>
+                <p>The Federalist Papers supported the passage of the U.S. Constitution. Name <span style="font-style: italic;">one</span> of the writers.</p>
+            </div>
+            <div id="6q" class="option">
+                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,AMP.setState({foo6: 'rtAns',score6: '&#10004;'})">
+                    <h2>James Madison</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,AMP.setState({foo6: 'wrgAns',score6: '&#x2717;'})">
+                    <h2>George Washington</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,AMP.setState({foo6: 'wrgAns',score6: '&#x2717;'})">
+                    <h2>Thomas Jefferson</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,AMP.setState({foo6: 'wrgAns',score6: '&#x2717;'})">
+                    <h2>John Adams</h2>
+                </section>
+            </div>
+            <div id="6a" class="option" hidden>
+                <section class="right">
+                    <h2>&#10004; James Madison</h2>
+                    <div>
+                        <p>James Madison, Alexander Hamilton, and John Jay wrote the Federalist Papers. The U.S. Constitution was written at the Constitutional Convention in 1787. People at the Constitutional Convention decided how the government should work. Then James Madison, Alexander Hamilton, and John Jay wrote the Federalist Papers. The Federalist Papers explained the new government. They said that the new United States needed the Constitution. Newspapers all over the United States published the Federalist Papers.</p>
+                        <amp-img width="300" height="300" layout="responsive" src="https://www.whitehouse.gov/wp-content/uploads/2021/01/04_james_madison.jpg" style="max-width: 300px;"></amp-img>
+                        <figcaption>James Madison <span>Library of Congress</span></figcaption>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; George Washington</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Thomas Jefferson</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; John Adams</h2>
+                </section>
+            </div>
+            <!-- end question #6 -->
+
+            <!-- QUESTION #7 -->
+            <div class="quizModule">
+                <h3>7 of 10</h3>
+                <p>The House of Representatives has how many voting members?</p>
+            </div>
+            <div id="7q" class="option">
+                <!-- (1/2) Tap triggers the AMP.setState() method. This method sets the foo state variable. -->
+                <section role="button" tabindex="0" on="tap:7q.hide,7a.show,AMP.setState({foo7: 'wrgAns',score7: '&#x2717;'})">
+                    <h2>one hundred (100)</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:7q.hide,7a.show,AMP.setState({foo7: 'wrgAns',score7: '&#x2717;'})">
+                    <h2>four hundred forty-one (441)</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:7q.hide,7a.show,AMP.setState({foo7: 'wrgAns',score7: '&#x2717;'})">
+                    <h2>two hundred (200)</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:7q.hide,7a.show,AMP.setState({foo7: 'rtAns',score7: '&#10004;'})">
+                    <h2>four hundred thirty-five (435)</h2>
+                </section>
+            </div>
+            <div id="7a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; one hundred (100)</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; four hundred forty-one (441)</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; two hundred (200)</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; four hundred thirty-five (435)</h2>
+                    <div>
+                        <p>There are 435 voting members in the House of Representatives. Each state is divided into districts. Each district elects one representative. California is the state with the most people. It has more than 50 representatives. States with fewer people, like Alaska, have only one representative.</p>
+                        <amp-img width="400" height="267" layout="responsive" src="https://www.history.com/.image/t_share/MTU3ODc5MDg3MjM3MTEzMTYx/donald-trump-delivers-address-to-joint-session-of-congress.jpg" style="max-width: 400px;"></amp-img>
+                        <figcaption>House of Representatives <span>Library of Congress</span></figcaption>
+                    </div>
+                </section>
+            </div>
+            <!-- end question #7 -->
+
+            <!-- QUESTION #8 -->
+            <div class="quizModule">
+                <h3>8 of 10</h3>
+                <amp-img width="300" height="356" layout="responsive" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/United_States_Declaration_of_Independence.jpg/647px-United_States_Declaration_of_Independence.jpg" style="max-width: 300px;"></amp-img>
+                <figcaption>Declaration of Independence <span>Library of Congress</span></figcaption>
+                <p>When was the Declaration of Independence adopted?</p>
+            </div>
+            <div id="8q" class="option">
+                <section role="button" tabindex="0" on="tap:8q.hide,8a.show,AMP.setState({foo8: 'wrgAns',score8: '&#x2717;'})">
+                    <h2>December 7, 1787</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:8q.hide,8a.show,AMP.setState({foo8: 'wrgAns',score8: '&#x2717;'})">
+                    <h2>March 4, 1789</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:8q.hide,8a.show,AMP.setState({foo8: 'rtAns',score8: '&#10004;'})">
+                    <h2>July 4, 1776</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:8q.hide,8a.show,AMP.setState({foo8: 'wrgAns',score8: '&#x2717;'})">
+                    <h2>July 4, 1789</h2>
+                </section>
+            </div>
+            <div id="8a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; December 7, 1787</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; March 4, 1789</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; July 4, 1776</h2>
+                    <div>
+                        <p>On July 4, 1776, the colonists adopted the Declaration of Independence. Thomas Jefferson wrote the Declaration of Independence. It said the colonies were free from Great Britain. Representatives from the 13 colonies signed the Declaration. July 4, 1776, is a special date in American history. It is the day that the United States became an independent country, separate from Britain.</p>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; July 4, 1789</h2>
+                </section>
+            </div>
+            <!-- end question #8 -->
+
+            <!-- QUESTION #9 -->
+            <div class="quizModule">
+                <h3>9 of 10</h3>
+                <p>What is the name of the national anthem?</p>
+            </div>
+            <div id="9q" class="option">
+                <section role="button" tabindex="0" on="tap:9q.hide,9a.show,AMP.setState({foo9: 'rtAns',score9: '&#10004;'})">
+                    <h2>The Star-Spangled Banner</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:9q.hide,9a.show,AMP.setState({foo9: 'wrgAns',score9: '&#x2717;'})">
+                    <h2>America the Beautiful</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:9q.hide,9a.show,AMP.setState({foo9: 'wrgAns',score9: '&#x2717;'})">
+                    <h2>My Country Tis of Thee</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:9q.hide,9a.show,AMP.setState({foo9: 'wrgAns',score9: '&#x2717;'})">
+                    <h2>God Bless the U.S.A.</h2>
+                </section>
+            </div>
+            <div id="9a" class="option" hidden>
+                <section class="right">
+                    <h2>&#10004; The Star-Spangled Banner</h2>
+                    <div>
+                        <p>"The Star-Spangled Banner" is the name of our national anthem. The song is about the United States flag. In the War of 1812, the United States fought the British. One night during the war, British ships attacked Fort McHenry in Baltimore. Bombs exploded all night. An American man named Francis Scott Key watched the battle from a ship. He worried that the United States might lose the battle. The next morning, he saw the United States' flag flying in the wind. He knew that the United States won the battle. Then he wrote the words to "The Star-Spangled Banner." "The Star-Spangled Banner" is now the national anthem of the United States.</p>
+                        <amp-img width="200" height="240" layout="responsive" src="https://myuscis-prod-practice-test-images.s3.amazonaws.com/production/practice_test_images/98/Q98.png" style="max-width: 200px;"></amp-img>
+                        <figcaption>Francis Scott Key <span>Library of Congress</span></figcaption>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; America the Beautiful</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; My Country Tis of Thee</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; God Bless the U.S.A.</h2>
+                </section>
+            </div>
+            <!-- end question #9 -->
+
+            <!-- QUESTION #10 -->
+            <div class="quizModule">
+                <h3>10 of 10</h3>
+                <p>What is one right or freedom from the First Amendment?</p>
+            </div>
+            <div id="10q" class="option">
+                <section role="button" tabindex="0" on="tap:10q.hide,10a.show,AMP.setState({foo10: 'wrgAns',score10: '&#x2717;'})">
+                    <h2>trial by jury</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:10q.hide,10a.show,AMP.setState({foo10: 'rtAns',score10: '&#10004;'})">
+                    <h2>speech</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:10q.hide,10a.show,AMP.setState({foo10: 'wrgAns',score10: '&#x2717;'})">
+                    <h2>to vote</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:10q.hide,10a.show,AMP.setState({foo10: 'wrgAns',score10: '&#x2717;'})">
+                    <h2>to bear arms</h2>
+                </section>
+            </div>
+            <div id="10a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; trial by jury</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; speech</h2>
+                    <div>
+                        <p>The First Amendment protects the right of speech, assembly, and press. It protects the right to petition the government and freedom of religion. Democracy works only if people can talk to each other and share their opinions. The First Amendment of the U.S. Constitution protects these rights.</p>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; to vote</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; to bear arms</h2>
+                </section>
+            </div>
+            <!-- end question #10 -->
+            <!-- quiz end -->
+
+            <!-- SCORE -->
+            <div id="scoreTable">
+                <h2>Your Quiz Results:</h2>
+                <table>
+                    <tr>
+                        <td>Q1</td>
+                        <td>Q2</td>
+                        <td>Q3</td>
+                        <td>Q4</td>
+                        <td>Q5</td>
+                        <td>Q6</td>
+                        <td>Q7</td>
+                        <td>Q8</td>
+                        <td>Q9</td>
+                        <td>Q10</td>
+                    </tr>
+                    <tr>
+                        <!-- (2/2) The class attribute is bound to the expression below. It references the defined data (amp-state resultsCSS id) from a JSON object. It updates the class -->
+                        <td [text]="score1" [class]="resultsCSS[foo1].style">Q1</td>
+                        <td [text]="score2" [class]="resultsCSS[foo2].style">Q2</td>
+                        <td [text]="score3" [class]="resultsCSS[foo3].style">Q3</td>
+                        <td [text]="score4" [class]="resultsCSS[foo4].style">Q4</td>
+                        <td [text]="score5" [class]="resultsCSS[foo5].style">Q5</td>
+                        <td [text]="score6" [class]="resultsCSS[foo6].style">Q6</td>
+                        <td [text]="score7" [class]="resultsCSS[foo7].style">Q7</td>
+                        <td [text]="score8" [class]="resultsCSS[foo8].style">Q8</td>
+                        <td [text]="score9" [class]="resultsCSS[foo9].style">Q9</td>
+                        <td [text]="score10" [class]="resultsCSS[foo10].style">Q10</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- end score -->
+
+        </div>
+
+    </body>
+</html>
