@@ -116,8 +116,6 @@
         </amp-state>
         <!-- end amp setstate -->
 
-        <div class="container">
-
             <!-- INTRO TEXT -->
             <div id="introText">
                 <amp-img width="550" height="205" layout="responsive" src="https://www.uscis.gov/sites/default/files/images/article-citizenship/OoC_NatzTest_DigiSignage_763x284_x2.png" style="max-width: 550px;"></amp-img>
@@ -130,21 +128,22 @@
             <!-- START QUIZ -->
             <!-- QUESTION #1 -->
             <div class="quizModule">
-                <h3>1 of 10</h3>
+                <h3>Question: 1 of 10</h3>
+                <h3>Result: <span id="1r" hidden [text]="score1" [class]="resultsCSS[foo1].style"></span></h3>
                 <p>Under our Constitution, some powers belong to the federal government. What is one power of the federal government?</p>
             </div>
             <div id="1q" class="option">
                 <!-- (1/2) Tap triggers the AMP.setState() method. This method sets the foo state variable. -->
-                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,AMP.setState({foo1: 'rtAns',score1: '&#10004;'})">
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,1r.show,AMP.setState({foo1: 'rtAns',score1: '&#10004;'})">
                     <h2>to declare war</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,AMP.setState({foo1: 'wrgAns',score1: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,1r.show,AMP.setState({foo1: 'wrgAns',score1: '&#x2717;'})">
                     <h2>to provide schooling and education</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,AMP.setState({foo1: 'wrgAns',score1: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,1r.show,AMP.setState({foo1: 'wrgAns',score1: '&#x2717;'})">
                     <h2>to provide protection (police)</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,AMP.setState({foo1: 'wrgAns',score1: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,1r.show,AMP.setState({foo1: 'wrgAns',score1: '&#x2717;'})">
                     <h2>to issue driver's licenses</h2>
                 </section>
             </div>
@@ -169,20 +168,21 @@
 
             <!-- QUESTION #2 -->
             <div class="quizModule">
-                <h3>2 of 10</h3>
+                <h3>Question: 2 of 10</h3>
+                <h3>Result: <span id="2r" hidden [text]="score2" [class]="resultsCSS[foo2].style"></span></h3>
                 <p>What <span style="font-style: italic;">are</span> two rights of everyone living in the United States?</p>
             </div>
             <div id="2q" class="option">
-                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,AMP.setState({foo2: 'wrgAns',score2: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,2r.show,AMP.setState({foo2: 'wrgAns',score2: '&#x2717;'})">
                     <h2>freedom of speech and freedom to run for president</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,AMP.setState({foo2: 'wrgAns',score2: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,2r.show,AMP.setState({foo2: 'wrgAns',score2: '&#x2717;'})">
                     <h2>freedom of religion and freedom to make treaties with other countries</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,AMP.setState({foo2: 'wrgAns',score2: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,2r.show,AMP.setState({foo2: 'wrgAns',score2: '&#x2717;'})">
                     <h2>freedom to petition the government and freedom to disobey traffic laws</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,AMP.setState({foo2: 'rtAns',score2: '&#10004;'})">
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,2r.show,AMP.setState({foo2: 'rtAns',score2: '&#10004;'})">
                     <h2>freedom of speech and freedom of religion</h2>
                 </section>
             </div>
@@ -207,20 +207,21 @@
 
             <!-- QUESTION #3 -->
             <div class="quizModule">
-                <h3>3 of 10</h3>
+                <h3>Question: 3 of 10</h3>
+                <h3>Result: <span id="3r" hidden [text]="score3" [class]="resultsCSS[foo3].style"></span></h3>
                 <p>What did Susan B. Anthony do?</p>
             </div>
             <div id="3q" class="option">
-                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,AMP.setState({foo3: 'wrgAns',score3: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,3r.show,AMP.setState({foo3: 'wrgAns',score3: '&#x2717;'})">
                     <h2>made the first flag of the United States</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,AMP.setState({foo3: 'wrgAns',score3: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,3r.show,AMP.setState({foo3: 'wrgAns',score3: '&#x2717;'})">
                     <h2>founded the Red Cross</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,AMP.setState({foo3: 'rtAns',score3: '&#10004;'})">
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,3r.show,AMP.setState({foo3: 'rtAns',score3: '&#10004;'})">
                     <h2>fought for women's rights</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,AMP.setState({foo3: 'wrgAns',score3: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,3r.show,AMP.setState({foo3: 'wrgAns',score3: '&#x2717;'})">
                     <h2>the first woman elected to the House of Representatives</h2>
                 </section>
             </div>
@@ -247,20 +248,21 @@
 
             <!-- QUESTION #4 -->
             <div class="quizModule">
-                <h3>4 of 10</h3>
+                <h3>Question: 4 of 10</h3>
+                <h3>Result: <span id="4r" hidden [text]="score4" [class]="resultsCSS[foo4].style"></span></h3>
                 <p>What is freedom of religion?</p>
             </div>
             <div id="4q" class="option">
-                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,AMP.setState({foo4: 'wrgAns',score4: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,4r.show,AMP.setState({foo4: 'wrgAns',score4: '&#x2717;'})">
                     <h2>You must choose a religion.</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,AMP.setState({foo4: 'wrgAns',score4: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,4r.show,AMP.setState({foo4: 'wrgAns',score4: '&#x2717;'})">
                     <h2>You can't choose the time you practice your religion.</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,AMP.setState({foo4: 'wrgAns',score4: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,4r.show,AMP.setState({foo4: 'wrgAns',score4: '&#x2717;'})">
                     <h2>No one can practice a religion.</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,AMP.setState({foo4: 'rtAns',score4: '&#10004;'})">
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,4r.show,AMP.setState({foo4: 'rtAns',score4: '&#10004;'})">
                     <h2>You can practice any religion, or not practice a religion.</h2>
                 </section>
             </div>
@@ -285,20 +287,21 @@
 
             <!-- QUESTION #5 -->
             <div class="quizModule">
-                <h3>5 of 10</h3>
+                <h3>Question: 5 of 10</h3>
+                <h3>Result: <span id="5r" hidden [text]="score5" [class]="resultsCSS[foo5].style"></span></h3>
                 <p>What is one responsibility that is only for United States citizens?</p>
             </div>
             <div id="5q" class="option">
-                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,AMP.setState({foo5: 'rtAns',score5: '&#10004;'})">
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,5r.show,AMP.setState({foo5: 'rtAns',score5: '&#10004;'})">
                     <h2>serve on a jury</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,AMP.setState({foo5: 'wrgAns',score5: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,5r.show,AMP.setState({foo5: 'wrgAns',score5: '&#x2717;'})">
                     <h2>obey the law</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,AMP.setState({foo5: 'wrgAns',score5: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,5r.show,AMP.setState({foo5: 'wrgAns',score5: '&#x2717;'})">
                     <h2>pay taxes</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,AMP.setState({foo5: 'wrgAns',score5: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,5r.show,AMP.setState({foo5: 'wrgAns',score5: '&#x2717;'})">
                     <h2>be respectful of others</h2>
                 </section>
             </div>
@@ -323,20 +326,21 @@
 
             <!-- QUESTION #6 -->
             <div class="quizModule">
-                <h3>6 of 10</h3>
+                <h3>Question: 6 of 10</h3>
+                <h3>Result: <span id="6r" hidden [text]="score6" [class]="resultsCSS[foo6].style"></span></h3>
                 <p>The Federalist Papers supported the passage of the U.S. Constitution. Name <span style="font-style: italic;">one</span> of the writers.</p>
             </div>
             <div id="6q" class="option">
-                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,AMP.setState({foo6: 'rtAns',score6: '&#10004;'})">
+                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,6r.show,AMP.setState({foo6: 'rtAns',score6: '&#10004;'})">
                     <h2>James Madison</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,AMP.setState({foo6: 'wrgAns',score6: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,6r.show,AMP.setState({foo6: 'wrgAns',score6: '&#x2717;'})">
                     <h2>George Washington</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,AMP.setState({foo6: 'wrgAns',score6: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,6r.show,AMP.setState({foo6: 'wrgAns',score6: '&#x2717;'})">
                     <h2>Thomas Jefferson</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,AMP.setState({foo6: 'wrgAns',score6: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,6r.show,AMP.setState({foo6: 'wrgAns',score6: '&#x2717;'})">
                     <h2>John Adams</h2>
                 </section>
             </div>
@@ -363,21 +367,22 @@
 
             <!-- QUESTION #7 -->
             <div class="quizModule">
-                <h3>7 of 10</h3>
+                <h3>Question: 7 of 10</h3>
+                <h3>Result: <span id="7r" hidden [text]="score7" [class]="resultsCSS[foo7].style"></span></h3>
                 <p>The House of Representatives has how many voting members?</p>
             </div>
             <div id="7q" class="option">
                 <!-- (1/2) Tap triggers the AMP.setState() method. This method sets the foo state variable. -->
-                <section role="button" tabindex="0" on="tap:7q.hide,7a.show,AMP.setState({foo7: 'wrgAns',score7: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:7q.hide,7a.show,7r.show,AMP.setState({foo7: 'wrgAns',score7: '&#x2717;'})">
                     <h2>one hundred (100)</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:7q.hide,7a.show,AMP.setState({foo7: 'wrgAns',score7: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:7q.hide,7a.show,7r.show,AMP.setState({foo7: 'wrgAns',score7: '&#x2717;'})">
                     <h2>four hundred forty-one (441)</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:7q.hide,7a.show,AMP.setState({foo7: 'wrgAns',score7: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:7q.hide,7a.show,7r.show,AMP.setState({foo7: 'wrgAns',score7: '&#x2717;'})">
                     <h2>two hundred (200)</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:7q.hide,7a.show,AMP.setState({foo7: 'rtAns',score7: '&#10004;'})">
+                <section role="button" tabindex="0" on="tap:7q.hide,7a.show,7r.show,AMP.setState({foo7: 'rtAns',score7: '&#10004;'})">
                     <h2>four hundred thirty-five (435)</h2>
                 </section>
             </div>
@@ -404,22 +409,23 @@
 
             <!-- QUESTION #8 -->
             <div class="quizModule">
-                <h3>8 of 10</h3>
+                <h3>Question: 8 of 10</h3>
+                <h3>Result: <span id="8r" hidden [text]="score8" [class]="resultsCSS[foo8].style"></span></h3>
                 <amp-img width="300" height="356" layout="responsive" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/United_States_Declaration_of_Independence.jpg/647px-United_States_Declaration_of_Independence.jpg" style="max-width: 300px;"></amp-img>
                 <figcaption>Declaration of Independence <span>Library of Congress</span></figcaption>
                 <p>When was the Declaration of Independence adopted?</p>
             </div>
             <div id="8q" class="option">
-                <section role="button" tabindex="0" on="tap:8q.hide,8a.show,AMP.setState({foo8: 'wrgAns',score8: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:8q.hide,8a.show,8r.show,AMP.setState({foo8: 'wrgAns',score8: '&#x2717;'})">
                     <h2>December 7, 1787</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:8q.hide,8a.show,AMP.setState({foo8: 'wrgAns',score8: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:8q.hide,8a.show,8r.show,AMP.setState({foo8: 'wrgAns',score8: '&#x2717;'})">
                     <h2>March 4, 1789</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:8q.hide,8a.show,AMP.setState({foo8: 'rtAns',score8: '&#10004;'})">
+                <section role="button" tabindex="0" on="tap:8q.hide,8a.show,8r.show,AMP.setState({foo8: 'rtAns',score8: '&#10004;'})">
                     <h2>July 4, 1776</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:8q.hide,8a.show,AMP.setState({foo8: 'wrgAns',score8: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:8q.hide,8a.show,8r.show,AMP.setState({foo8: 'wrgAns',score8: '&#x2717;'})">
                     <h2>July 4, 1789</h2>
                 </section>
             </div>
@@ -444,20 +450,21 @@
 
             <!-- QUESTION #9 -->
             <div class="quizModule">
-                <h3>9 of 10</h3>
+                <h3>Question: 9 of 10</h3>
+                <h3>Result: <span id="9r" hidden [text]="score9" [class]="resultsCSS[foo9].style"></span></h3>
                 <p>What is the name of the national anthem?</p>
             </div>
             <div id="9q" class="option">
-                <section role="button" tabindex="0" on="tap:9q.hide,9a.show,AMP.setState({foo9: 'rtAns',score9: '&#10004;'})">
+                <section role="button" tabindex="0" on="tap:9q.hide,9a.show,9r.show,AMP.setState({foo9: 'rtAns',score9: '&#10004;'})">
                     <h2>The Star-Spangled Banner</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:9q.hide,9a.show,AMP.setState({foo9: 'wrgAns',score9: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:9q.hide,9a.show,9r.show,AMP.setState({foo9: 'wrgAns',score9: '&#x2717;'})">
                     <h2>America the Beautiful</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:9q.hide,9a.show,AMP.setState({foo9: 'wrgAns',score9: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:9q.hide,9a.show,9r.show,AMP.setState({foo9: 'wrgAns',score9: '&#x2717;'})">
                     <h2>My Country Tis of Thee</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:9q.hide,9a.show,AMP.setState({foo9: 'wrgAns',score9: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:9q.hide,9a.show,9r.show,AMP.setState({foo9: 'wrgAns',score9: '&#x2717;'})">
                     <h2>God Bless the U.S.A.</h2>
                 </section>
             </div>
@@ -484,20 +491,21 @@
 
             <!-- QUESTION #10 -->
             <div class="quizModule">
-                <h3>10 of 10</h3>
+                <h3>Question: 10 of 10</h3>
+                <h3>Result: <span id="10r" hidden [text]="score10" [class]="resultsCSS[foo10].style"></span></h3>
                 <p>What is one right or freedom from the First Amendment?</p>
             </div>
             <div id="10q" class="option">
-                <section role="button" tabindex="0" on="tap:10q.hide,10a.show,AMP.setState({foo10: 'wrgAns',score10: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:10q.hide,10a.show,10r.show,AMP.setState({foo10: 'wrgAns',score10: '&#x2717;'})">
                     <h2>trial by jury</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:10q.hide,10a.show,AMP.setState({foo10: 'rtAns',score10: '&#10004;'})">
+                <section role="button" tabindex="0" on="tap:10q.hide,10a.show,10r.show,AMP.setState({foo10: 'rtAns',score10: '&#10004;'})">
                     <h2>speech</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:10q.hide,10a.show,AMP.setState({foo10: 'wrgAns',score10: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:10q.hide,10a.show,10r.show,AMP.setState({foo10: 'wrgAns',score10: '&#x2717;'})">
                     <h2>to vote</h2>
                 </section>
-                <section role="button" tabindex="0" on="tap:10q.hide,10a.show,AMP.setState({foo10: 'wrgAns',score10: '&#x2717;'})">
+                <section role="button" tabindex="0" on="tap:10q.hide,10a.show,10r.show,AMP.setState({foo10: 'wrgAns',score10: '&#x2717;'})">
                     <h2>to bear arms</h2>
                 </section>
             </div>
