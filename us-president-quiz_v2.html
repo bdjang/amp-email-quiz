@@ -105,6 +105,8 @@
         background-color: #e07778;
     }
 
+    /* ANIMATION */
+
 </style>
 </head>
 
@@ -191,7 +193,7 @@
             <div class="quizModule">
                 <h3>Question: 2 of 10</h3>
                 <h3>Result: <span id="2r" hidden [text]="score2" [class]="resultsCSS[foo2].style"></span></h3>
-                <p>Who was the first president to be assassinated while serving in office?</p>
+                <p>Who was the first president assassinated while serving in office?</p>
             </div>
             <div id="2q" class="option">
                 <section role="button" tabindex="0" on="tap:2q.hide,2a.show,2r.show,AMP.setState({foo2: 'wrgAns',score2: '&#x2717;'})">
