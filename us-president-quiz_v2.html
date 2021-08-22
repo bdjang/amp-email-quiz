@@ -8,6 +8,7 @@
 <head>
 <meta charset="utf-8">
 <script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
 <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 <style amp4email-boilerplate>body{visibility:hidden}</style>
 
@@ -169,7 +170,7 @@
                 <section class="right">
                     <h2>&#10004; Mount Vernon</h2>
                     <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>Washington's home is located on the banks of the Potomac River in Fairfax County, Virginia.</p>
                         <amp-img width="300" height="231" layout="responsive" src="https://tile.loc.gov/image-services/iiif/service:pnp:highsm:17800:17835/full/pct:12.5/0/default.jpg" style="max-width: 300px;"></amp-img>
                         <figcaption>Mount Vernon <span>Library of Congress</span></figcaption>
                     </div>
@@ -223,7 +224,7 @@
                     <h2>&#10004; Abraham Lincoln</h2>
                     <div>
                         <p>Lincoln was assissinated in 1865 by John Wilkes Booth.</p>
-                        <amp-img width="300" height="368" layout="responsive" src="https://tile.loc.gov/storage-services/service/pnp/cph/3a50000/3a53000/3a53200/3a53289r.jpg" style="max-width: 300px;"></amp-img>
+                        <amp-img width="300" height="281" layout="responsive" src="https://upload.wikimedia.org/wikipedia/commons/3/37/Lincoln_assassination_slide_c1900_-_Restoration.jpg" style="max-width: 300px;"></amp-img>
                         <figcaption>Abraham Lincoln <span>Library of Congress</span></figcaption>
                     </div>
                 </section>
@@ -277,7 +278,7 @@
                 <h3>Result: <span id="4r" hidden [text]="score4" [class]="resultsCSS[foo4].style"></span></h3>
                 <amp-img width="300" height="375" layout="responsive" src="https://tile.loc.gov/storage-services/service/pnp/cph/3c10000/3c17000/3c17100/3c17122v.jpg" style="max-width: 300px;"></amp-img>
                 <figcaption>Harry Truman <span>Library of Congress</span></figcaption>
-                <p>Which of the following jobs did Harry Truman NOT do in his lifetime?</p>
+                <p>Which of the following jobs did Harry Truman <span style="font-style: italic;">not</span> do in his lifetime?</p>
             </div>
             <div id="4q" class="option">
                 <section role="button" tabindex="0" on="tap:4q.hide,4a.show,4r.show,AMP.setState({foo4: 'wrgAns',score4: '&#x2717;'})">
@@ -338,8 +339,8 @@
                 <section class="right">
                     <h2>&#10004; Declaration of Independence</h2>
                     <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quo eligendi, voluptate dolorem sed, nostrum cupiditate nulla facere cum sunt vitae qui, inventore sint perferendis doloribus culpa! Blanditiis, nobis ex.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur modi explicabo quis voluptatibus ad animi aliquid quos. Ipsa nulla, sint labore dolorum distinctio!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia in nostrum saepe labore fugit ipsa, neque cupiditate iure, facere rerum.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore minima nam officia officiis, rerum expedita? Fugit omnis repellendus minima itaque nulla illum, quae, tempore! Libero dolorum error voluptas.</p>
-                        <amp-img width="300" height="356" layout="responsive" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/United_States_Declaration_of_Independence.jpg/647px-United_States_Declaration_of_Independence.jpg" style="max-width: 300px;"></amp-img>
+                        <p>Both Benjamin Franklin and John Adams helped edit the Declaration of Independence.</p>
+                        <amp-img width="300" height="400" layout="responsive" src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Writing_the_Declaration_of_Independence_1776_cph.3g09904.jpg" style="max-width: 300px;"></amp-img>
                         <figcaption>Declaration of Independence <span>Benjamin D.</span></figcaption>
                     </div>
                 </section>
@@ -359,39 +360,39 @@
             <div class="quizModule">
                 <h3>Question: 6 of 10</h3>
                 <h3>Result: <span id="6r" hidden [text]="score6" [class]="resultsCSS[foo6].style"></span></h3>
-                <p>The Federalist Papers supported the passage of the U.S. Constitution. Name <span style="font-style: italic;">one</span> of the writers.</p>
+                <p>Which president served two non-consecutive terms?</p>
             </div>
             <div id="6q" class="option">
+                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,6r.show,AMP.setState({foo6: 'wrgAns',score6: '&#x2717;'})">
+                    <h2>William Howard Taft</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,6r.show,AMP.setState({foo6: 'wrgAns',score6: '&#x2717;'})">
+                    <h2>Lyndon B. Johnson</h2>
+                </section>
                 <section role="button" tabindex="0" on="tap:6q.hide,6a.show,6r.show,AMP.setState({foo6: 'rtAns',score6: '&#10004;'})">
-                    <h2>James Madison</h2>
+                    <h2>Grover Cleveland</h2>
                 </section>
                 <section role="button" tabindex="0" on="tap:6q.hide,6a.show,6r.show,AMP.setState({foo6: 'wrgAns',score6: '&#x2717;'})">
-                    <h2>George Washington</h2>
-                </section>
-                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,6r.show,AMP.setState({foo6: 'wrgAns',score6: '&#x2717;'})">
-                    <h2>Thomas Jefferson</h2>
-                </section>
-                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,6r.show,AMP.setState({foo6: 'wrgAns',score6: '&#x2717;'})">
-                    <h2>John Adams</h2>
+                    <h2>James K. Polk</h2>
                 </section>
             </div>
             <div id="6a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; William Howard Taft</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Lyndon B. Johnson</h2>
+                </section>
                 <section class="right">
-                    <h2>&#10004; James Madison</h2>
+                    <h2>&#10004; Grover Cleveland</h2>
                     <div>
-                        <p>James Madison, Alexander Hamilton, and John Jay wrote the Federalist Papers. The U.S. Constitution was written at the Constitutional Convention in 1787. People at the Constitutional Convention decided how the government should work. Then James Madison, Alexander Hamilton, and John Jay wrote the Federalist Papers. The Federalist Papers explained the new government. They said that the new United States needed the Constitution. Newspapers all over the United States published the Federalist Papers.</p>
-                        <amp-img width="300" height="300" layout="responsive" src="https://www.whitehouse.gov/wp-content/uploads/2021/01/04_james_madison.jpg" style="max-width: 300px;"></amp-img>
+                        <p>Grover Cleveland served as the 22nd and 24th US President.</p>
+                        <amp-img width="300" height="381" layout="responsive" src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Grover_Cleveland_-_NARA_-_518139.jpg" style="max-width: 300px;"></amp-img>
                         <figcaption>James Madison <span>Library of Congress</span></figcaption>
                     </div>
                 </section>
                 <section class="wrong">
-                    <h2>&#x2717; George Washington</h2>
-                </section>
-                <section class="wrong">
-                    <h2>&#x2717; Thomas Jefferson</h2>
-                </section>
-                <section class="wrong">
-                    <h2>&#x2717; John Adams</h2>
+                    <h2>&#x2717; James K. Polk</h2>
                 </section>
             </div>
             <!-- end question #6 -->
@@ -400,39 +401,40 @@
             <div class="quizModule">
                 <h3>Question: 7 of 10</h3>
                 <h3>Result: <span id="7r" hidden [text]="score7" [class]="resultsCSS[foo7].style"></span></h3>
-                <p>The House of Representatives has how many voting members?</p>
+                <p>Which president suspended the gold standard in the United States?</p>
             </div>
             <div id="7q" class="option">
                 <!-- (1/2) Tap triggers the AMP.setState() method. This method sets the foo state variable. -->
                 <section role="button" tabindex="0" on="tap:7q.hide,7a.show,7r.show,AMP.setState({foo7: 'wrgAns',score7: '&#x2717;'})">
-                    <h2>one hundred (100)</h2>
+                    <h2>Richard Nixon</h2>
                 </section>
                 <section role="button" tabindex="0" on="tap:7q.hide,7a.show,7r.show,AMP.setState({foo7: 'wrgAns',score7: '&#x2717;'})">
-                    <h2>four hundred forty-one (441)</h2>
+                    <h2>Franklin Pierce</h2>
                 </section>
                 <section role="button" tabindex="0" on="tap:7q.hide,7a.show,7r.show,AMP.setState({foo7: 'wrgAns',score7: '&#x2717;'})">
-                    <h2>two hundred (200)</h2>
+                    <h2>Abraham Lincoln</h2>
                 </section>
                 <section role="button" tabindex="0" on="tap:7q.hide,7a.show,7r.show,AMP.setState({foo7: 'rtAns',score7: '&#10004;'})">
-                    <h2>four hundred thirty-five (435)</h2>
+                    <h2>Franklin Delano Roosevelt</h2>
                 </section>
             </div>
             <div id="7a" class="option" hidden>
                 <section class="wrong">
-                    <h2>&#x2717; one hundred (100)</h2>
+                    <h2>&#x2717; Richard Nixon</h2>
                 </section>
                 <section class="wrong">
-                    <h2>&#x2717; four hundred forty-one (441)</h2>
+                    <h2>&#x2717; Franklin Pierce</h2>
                 </section>
                 <section class="wrong">
-                    <h2>&#x2717; two hundred (200)</h2>
+                    <h2>&#x2717; Abraham Lincoln</h2>
                 </section>
                 <section class="right">
-                    <h2>&#10004; four hundred thirty-five (435)</h2>
+                    <h2>&#10004; Franklin Delano Roosevelt</h2>
                     <div>
                         <p>There are 435 voting members in the House of Representatives. Each state is divided into districts. Each district elects one representative. California is the state with the most people. It has more than 50 representatives. States with fewer people, like Alaska, have only one representative.</p>
-                        <amp-img width="400" height="267" layout="responsive" src="https://www.history.com/.image/t_share/MTU3ODc5MDg3MjM3MTEzMTYx/donald-trump-delivers-address-to-joint-session-of-congress.jpg" style="max-width: 400px;"></amp-img>
-                        <figcaption>House of Representatives <span>Library of Congress</span></figcaption>
+                        <amp-anim width="300" height="228" src="https://media4.giphy.com/media/lOiJqCjiEOcmc/giphy.gif?cid=790b761163f313ad5f8c475d83bba504daf266bc172d1b3d&rid=giphy.gif&ct=g">
+                            <amp-img placeholder width="300" height="228" src="https://dummyimage.com/300x228/000/fff"></amp-img>
+                        </amp-anim>
                     </div>
                 </section>
             </div>
@@ -442,39 +444,37 @@
             <div class="quizModule">
                 <h3>Question: 8 of 10</h3>
                 <h3>Result: <span id="8r" hidden [text]="score8" [class]="resultsCSS[foo8].style"></span></h3>
-                <amp-img width="300" height="356" layout="responsive" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/United_States_Declaration_of_Independence.jpg/647px-United_States_Declaration_of_Independence.jpg" style="max-width: 300px;"></amp-img>
-                <figcaption>Declaration of Independence <span>Library of Congress</span></figcaption>
-                <p>When was the Declaration of Independence adopted?</p>
+                <p>Who was the first president born in the United States of America?</p>
             </div>
             <div id="8q" class="option">
                 <section role="button" tabindex="0" on="tap:8q.hide,8a.show,8r.show,AMP.setState({foo8: 'wrgAns',score8: '&#x2717;'})">
-                    <h2>December 7, 1787</h2>
+                    <h2>George Washington</h2>
                 </section>
                 <section role="button" tabindex="0" on="tap:8q.hide,8a.show,8r.show,AMP.setState({foo8: 'wrgAns',score8: '&#x2717;'})">
-                    <h2>March 4, 1789</h2>
+                    <h2>Andrew Jackson</h2>
                 </section>
                 <section role="button" tabindex="0" on="tap:8q.hide,8a.show,8r.show,AMP.setState({foo8: 'rtAns',score8: '&#10004;'})">
-                    <h2>July 4, 1776</h2>
+                    <h2>Martin Van Buren</h2>
                 </section>
                 <section role="button" tabindex="0" on="tap:8q.hide,8a.show,8r.show,AMP.setState({foo8: 'wrgAns',score8: '&#x2717;'})">
-                    <h2>July 4, 1789</h2>
+                    <h2>John Adams</h2>
                 </section>
             </div>
             <div id="8a" class="option" hidden>
                 <section class="wrong">
-                    <h2>&#x2717; December 7, 1787</h2>
+                    <h2>&#x2717; George Washington</h2>
                 </section>
                 <section class="wrong">
-                    <h2>&#x2717; March 4, 1789</h2>
+                    <h2>&#x2717; Andrew Jackson</h2>
                 </section>
                 <section class="right">
-                    <h2>&#10004; July 4, 1776</h2>
+                    <h2>&#10004; Martin Van Buren</h2>
                     <div>
-                        <p>On July 4, 1776, the colonists adopted the Declaration of Independence. Thomas Jefferson wrote the Declaration of Independence. It said the colonies were free from Great Britain. Representatives from the 13 colonies signed the Declaration. July 4, 1776, is a special date in American history. It is the day that the United States became an independent country, separate from Britain.</p>
+                        <p>Martin Van Buren was born on December 5, 1782 in Kinderhook, New York.</p>
                     </div>
                 </section>
                 <section class="wrong">
-                    <h2>&#x2717; July 4, 1789</h2>
+                    <h2>&#x2717; John Adams</h2>
                 </section>
             </div>
             <!-- end question #8 -->
@@ -483,39 +483,39 @@
             <div class="quizModule">
                 <h3>Question: 9 of 10</h3>
                 <h3>Result: <span id="9r" hidden [text]="score9" [class]="resultsCSS[foo9].style"></span></h3>
-                <p>What is the name of the national anthem?</p>
+                <p>How many presidents were Civil War veterans?</p>
             </div>
             <div id="9q" class="option">
                 <section role="button" tabindex="0" on="tap:9q.hide,9a.show,9r.show,AMP.setState({foo9: 'rtAns',score9: '&#10004;'})">
-                    <h2>The Star-Spangled Banner</h2>
+                    <h2>five</h2>
                 </section>
                 <section role="button" tabindex="0" on="tap:9q.hide,9a.show,9r.show,AMP.setState({foo9: 'wrgAns',score9: '&#x2717;'})">
-                    <h2>America the Beautiful</h2>
+                    <h2>four</h2>
                 </section>
                 <section role="button" tabindex="0" on="tap:9q.hide,9a.show,9r.show,AMP.setState({foo9: 'wrgAns',score9: '&#x2717;'})">
-                    <h2>My Country Tis of Thee</h2>
+                    <h2>three</h2>
                 </section>
                 <section role="button" tabindex="0" on="tap:9q.hide,9a.show,9r.show,AMP.setState({foo9: 'wrgAns',score9: '&#x2717;'})">
-                    <h2>God Bless the U.S.A.</h2>
+                    <h2>eight</h2>
                 </section>
             </div>
             <div id="9a" class="option" hidden>
                 <section class="right">
-                    <h2>&#10004; The Star-Spangled Banner</h2>
+                    <h2>&#10004; five</h2>
                     <div>
-                        <p>"The Star-Spangled Banner" is the name of our national anthem. The song is about the United States flag. In the War of 1812, the United States fought the British. One night during the war, British ships attacked Fort McHenry in Baltimore. Bombs exploded all night. An American man named Francis Scott Key watched the battle from a ship. He worried that the United States might lose the battle. The next morning, he saw the United States' flag flying in the wind. He knew that the United States won the battle. Then he wrote the words to "The Star-Spangled Banner." "The Star-Spangled Banner" is now the national anthem of the United States.</p>
-                        <amp-img width="200" height="240" layout="responsive" src="https://myuscis-prod-practice-test-images.s3.amazonaws.com/production/practice_test_images/98/Q98.png" style="max-width: 200px;"></amp-img>
-                        <figcaption>Francis Scott Key <span>Library of Congress</span></figcaption>
+                        <p>U.S. Grant, Rutherford B. Hayes, James A. Garfield, Benjamin Harrison, and William McKinley all fought in the Civil War.</p>
+                        <amp-img width="300" height="209" layout="responsive" src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Battle_of_Antietam.png" style="max-width: 300px;"></amp-img>
+                        <figcaption>Battle of Antietam, 1862<span>Library of Congress</span></figcaption>
                     </div>
                 </section>
                 <section class="wrong">
-                    <h2>&#x2717; America the Beautiful</h2>
+                    <h2>&#x2717; four</h2>
                 </section>
                 <section class="wrong">
-                    <h2>&#x2717; My Country Tis of Thee</h2>
+                    <h2>&#x2717; three</h2>
                 </section>
                 <section class="wrong">
-                    <h2>&#x2717; God Bless the U.S.A.</h2>
+                    <h2>&#x2717; eight</h2>
                 </section>
             </div>
             <!-- end question #9 -->
@@ -524,37 +524,37 @@
             <div class="quizModule">
                 <h3>Question: 10 of 10</h3>
                 <h3>Result: <span id="10r" hidden [text]="score10" [class]="resultsCSS[foo10].style"></span></h3>
-                <p>What is one right or freedom from the First Amendment?</p>
+                <p>Which state produced the most US presidents?</p>
             </div>
             <div id="10q" class="option">
                 <section role="button" tabindex="0" on="tap:10q.hide,10a.show,10r.show,AMP.setState({foo10: 'wrgAns',score10: '&#x2717;'})">
-                    <h2>trial by jury</h2>
+                    <h2>New York</h2>
                 </section>
                 <section role="button" tabindex="0" on="tap:10q.hide,10a.show,10r.show,AMP.setState({foo10: 'rtAns',score10: '&#10004;'})">
-                    <h2>speech</h2>
+                    <h2>Virginia</h2>
                 </section>
                 <section role="button" tabindex="0" on="tap:10q.hide,10a.show,10r.show,AMP.setState({foo10: 'wrgAns',score10: '&#x2717;'})">
-                    <h2>to vote</h2>
+                    <h2>Ohio</h2>
                 </section>
                 <section role="button" tabindex="0" on="tap:10q.hide,10a.show,10r.show,AMP.setState({foo10: 'wrgAns',score10: '&#x2717;'})">
-                    <h2>to bear arms</h2>
+                    <h2>Pennsylvania</h2>
                 </section>
             </div>
             <div id="10a" class="option" hidden>
                 <section class="wrong">
-                    <h2>&#x2717; trial by jury</h2>
+                    <h2>&#x2717; New York</h2>
                 </section>
                 <section class="right">
-                    <h2>&#10004; speech</h2>
+                    <h2>&#10004; Virginia</h2>
                     <div>
-                        <p>The First Amendment protects the right of speech, assembly, and press. It protects the right to petition the government and freedom of religion. Democracy works only if people can talk to each other and share their opinions. The First Amendment of the U.S. Constitution protects these rights.</p>
+                        <p>The commonwealth was the home of eight presidents, including four of the nation's first five: William Henry Harrison, Thomas Jefferson, James Madison, James Monroe, Zachary Taylor, John Tyler, George Washington, and Woodrow Wilson.</p>
                     </div>
                 </section>
                 <section class="wrong">
-                    <h2>&#x2717; to vote</h2>
+                    <h2>&#x2717; Ohio</h2>
                 </section>
                 <section class="wrong">
-                    <h2>&#x2717; to bear arms</h2>
+                    <h2>&#x2717; Pennsylvania</h2>
                 </section>
             </div>
             <!-- end question #10 -->
