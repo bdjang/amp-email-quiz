@@ -142,7 +142,7 @@
             <!-- START QUIZ -->
             <!-- QUESTION #1 -->
             <div class="quizModule">
-                <h3>Question: 1 of 10</h3>
+                <h3>Question: 1 of 12</h3>
                 <h3>Result: <span id="1r" hidden [text]="score1" [class]="resultsCSS[foo1].style"></span></h3>
                 <amp-img width="300" height="374" layout="responsive" src="https://tile.loc.gov/storage-services/service/pnp/cph/3c10000/3c17000/3c17100/3c17116r.jpg" style="width: 100%;"></amp-img>
                 <figcaption>George Washington, first president of the United States <span>Library of Congress</span></figcaption>
@@ -192,7 +192,7 @@
 
             <!-- QUESTION #2 -->
             <div class="quizModule">
-                <h3>Question: 2 of 10</h3>
+                <h3>Question: 2 of 12</h3>
                 <h3>Result: <span id="2r" hidden [text]="score2" [class]="resultsCSS[foo2].style"></span></h3>
                 <p>Who was the first president assassinated while serving in office?</p>
             </div>
@@ -233,7 +233,7 @@
 
             <!-- QUESTION #3 -->
             <div class="quizModule">
-                <h3>Question: 3 of 10</h3>
+                <h3>Question: 3 of 12</h3>
                 <h3>Result: <span id="3r" hidden [text]="score3" [class]="resultsCSS[foo3].style"></span></h3>
                 <p>Which president earned a PhD?</p>
             </div>
@@ -274,7 +274,7 @@
 
             <!-- QUESTION #4 -->
             <div class="quizModule">
-                <h3>Question: 4 of 10</h3>
+                <h3>Question: 4 of 12</h3>
                 <h3>Result: <span id="4r" hidden [text]="score4" [class]="resultsCSS[foo4].style"></span></h3>
                 <amp-img width="300" height="375" layout="responsive" src="https://tile.loc.gov/storage-services/service/pnp/cph/3c10000/3c17000/3c17100/3c17122v.jpg" style="width: 100%;"></amp-img>
                 <figcaption>Harry Truman <span>Library of Congress</span></figcaption>
@@ -315,7 +315,7 @@
 
             <!-- QUESTION #5 -->
             <div class="quizModule">
-                <h3>Question: 5 of 10</h3>
+                <h3>Question: 5 of 12</h3>
                 <h3>Result: <span id="5r" hidden [text]="score5" [class]="resultsCSS[foo5].style"></span></h3>
                 <amp-img width="300" height="365" layout="responsive" src="https://tile.loc.gov/storage-services/service/pnp/ppmsca/15700/15708r.jpg" style="width: 100%;"></amp-img>
                 <figcaption>Thomas Jefferson <span>Library of Congress</span></figcaption>
@@ -358,7 +358,7 @@
 
             <!-- QUESTION #6 -->
             <div class="quizModule">
-                <h3>Question: 6 of 10</h3>
+                <h3>Question: 6 of 12</h3>
                 <h3>Result: <span id="6r" hidden [text]="score6" [class]="resultsCSS[foo6].style"></span></h3>
                 <p>Which president served two non-consecutive terms?</p>
             </div>
@@ -399,7 +399,7 @@
 
             <!-- QUESTION #7 -->
             <div class="quizModule">
-                <h3>Question: 7 of 10</h3>
+                <h3>Question: 7 of 12</h3>
                 <h3>Result: <span id="7r" hidden [text]="score7" [class]="resultsCSS[foo7].style"></span></h3>
                 <p>Which president suspended the gold standard in the United States?</p>
             </div>
@@ -442,7 +442,7 @@
 
             <!-- QUESTION #8 -->
             <div class="quizModule">
-                <h3>Question: 8 of 10</h3>
+                <h3>Question: 8 of 12</h3>
                 <h3>Result: <span id="8r" hidden [text]="score8" [class]="resultsCSS[foo8].style"></span></h3>
                 <p>Who was the first president born in the United States of America?</p>
             </div>
@@ -481,7 +481,7 @@
 
             <!-- QUESTION #9 -->
             <div class="quizModule">
-                <h3>Question: 9 of 10</h3>
+                <h3>Question: 9 of 12</h3>
                 <h3>Result: <span id="9r" hidden [text]="score9" [class]="resultsCSS[foo9].style"></span></h3>
                 <p>How many presidents were Civil War veterans?</p>
             </div>
@@ -522,7 +522,7 @@
 
             <!-- QUESTION #10 -->
             <div class="quizModule">
-                <h3>Question: 10 of 10</h3>
+                <h3>Question: 10 of 12</h3>
                 <h3>Result: <span id="10r" hidden [text]="score10" [class]="resultsCSS[foo10].style"></span></h3>
                 <p>Which state produced the most US presidents?</p>
             </div>
@@ -558,6 +558,46 @@
                 </section>
             </div>
             <!-- end question #10 -->
+
+            <!-- QUESTION #11 -->
+            <div class="quizModule">
+                <h3>Question: 11 of 12</h3>
+                <h3>Result: <span id="11r" hidden [text]="score11" [class]="resultsCSS[foo11].style"></span></h3>
+                <p>What is the maximum number of years a president can serve?</p>
+            </div>
+            <div id="11q" class="option">
+                <!-- (1/2) Tap triggers the AMP.setState() method. This method sets the foo state variable. -->
+                <section role="button" tabindex="0" on="tap:11q.hide,11a.show,11r.show,AMP.setState({foo11: 'wrgAns',score11: '&#x2717;'})">
+                    <h2>4 years</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:11q.hide,11a.show,11r.show,AMP.setState({foo11: 'wrgAns',score11: '&#x2717;'})">
+                    <h2>6 years</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:11q.hide,11a.show,11r.show,AMP.setState({foo11: 'wrgAns',score11: '&#x2717;'})">
+                    <h2>8 years</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:11q.hide,11a.show,11r.show,AMP.setState({foo11: 'rtAns',score11: '&#10004;'})">
+                    <h2>10 years</h2>
+                </section>
+            </div>
+            <div id="11a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; 4 years</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; 6 years</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; 8 years</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; 10 years</h2>
+                    <div>
+                        <p>The 22nd amendment caps the service of a president at 10 years. If a person succeeds to the office of president without election and serves less than two years, that person may run for two full terms; otherwise, a person succeeding to office of president can serve no more than a single elected term.</p>
+                    </div>
+                </section>
+            </div>
+            <!-- end question #11 -->
             <!-- quiz end -->
 
             <!-- SCORE -->
@@ -575,6 +615,7 @@
                         <td>Q8</td>
                         <td>Q9</td>
                         <td>Q10</td>
+                        <td>Q11</td>
                     </tr>
                     <tr>
                         <!-- (2/2) The class attribute is bound to the expression below. It references the defined data (amp-state resultsCSS id) from a JSON object. It updates the class.
@@ -593,6 +634,7 @@
                         <td [text]="score8" [class]="resultsCSS[foo8].style">Q8</td>
                         <td [text]="score9" [class]="resultsCSS[foo9].style">Q9</td>
                         <td [text]="score10" [class]="resultsCSS[foo10].style">Q10</td>
+                        <td [text]="score11" [class]="resultsCSS[foo11].style">Q11</td>
                     </tr>
                 </table>
             </div>
