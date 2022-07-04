@@ -45,9 +45,11 @@
     }
     .quizModule h3 { /* Places question + result on same line */
         display: inline-block;
+        width: auto;
     }
     .quizModule h3:last-of-type { /* Moves result to right side */
-        padding: 0 0 0 45%;
+        text-align: right;
+        width: 70%;
     }
     .quizModule p {
         text-align: center;
@@ -95,7 +97,12 @@
         font-weight: 400;
     }
 
-    /* ANIMATION */
+    @media only screen and (max-width: 765px) {
+    .quizModule h3:last-of-type {
+        text-align: right;
+        width: 220px;
+    }        
+}
 
 </style>
 </head>
