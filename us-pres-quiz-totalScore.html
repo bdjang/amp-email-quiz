@@ -1,0 +1,584 @@
+<!--
+- This version uses amp-bind and AMP.setState. At the bottom of the email, the results table displays the user's score color-coded
+- https://amp.dev/documentation/components/amp-bind/?format=email
+-->
+
+<!DOCTYPE html>
+<html ⚡4email data-css-strict lang="en">
+<head>
+<meta charset="utf-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
+<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<style amp4email-boilerplate>body{visibility:hidden}</style>
+
+<style amp-custom>
+
+    /* LAYOUT STYLES */
+    .container {
+        font-family: Georgia, Times New Roman, Times, serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.65em;
+        margin: auto;
+        max-width: 550px;
+        padding: 40px 0 40px 0;
+    }
+    figcaption {
+        color: #666666;
+        font-size: 14px;
+        line-height: 1.5em;
+    }
+    figcaption span {
+        color: #999999;
+        font-size: 12px;
+    }
+
+    /* QUIZ */
+    #introText {
+        padding: 0 0 20px 0;
+    }
+    .quizModule {
+        border-top: 1px solid #b1b7c3;
+        padding: 20px 0 0 0;
+    }
+    .quizModule h3 { /* Places question + result on same line */
+        display: inline-block;
+    }
+    .quizModule h3:last-of-type { /* Moves result to right side */
+        padding: 0 0 0 45%;
+    }
+    .quizModule p {
+        text-align: center;
+    }
+    .wrong h2, .red {
+        color: #e07778;
+    }
+    .right h2, .green {
+        color: #8ab98d;
+    }
+    .option {
+        padding: 0 0 20px 0;
+    }
+    .option h2 { /* Button CSS for both right/wrong */
+        background-color: #eaf2f9;
+        border-radius: 3px;
+        border: none;
+        font-weight: 400;
+        line-height: 1.25em;
+        padding: 20px;
+    }
+    .option .right div { /* Answer explaination section */
+        padding: 0 20px 20px;
+        border-bottom: 1px solid #b1b7c3;;
+        border-left: 1px solid #b1b7c3;
+    }
+    .option section { /* Space between buttons */
+        margin: 20px 0;
+    }
+    section[role=button] h2 { /* Pre-select button font color */
+        color: #0a3f68;
+    }
+    section[role=button]:hover h2 { /* Hover button color */
+        background-color: #06365e;
+        color: #ffffff;
+    }
+
+    /* RESULTS */
+    #scoreTable {
+        border-top: 1px solid #b1b7c3;
+        padding: 20px 0 0 0;
+        text-align: center;
+    }
+    #scoreTable h2 {
+        font-weight: 400;
+    }
+
+    /* ANIMATION */
+
+</style>
+</head>
+
+    <body>
+
+        <div class="container">
+
+            <!-- INTRO TEXT -->
+            <div id="introText" align="left">
+                <h2>American Presidential History Quiz</h2>
+                <figcaption>Compiled by Benjamin D. <span>AUGUST 18, 2021</span></figcaption>
+                <p>Test your knowledge of American US Presidents and take the quiz below.</p>
+                <p>This quiz was built using <a href="https://amp.dev/about/email/">AMP for Email</a> and can be played entirely within an email.</p>
+            </div>
+            <!-- end intro text -->
+
+            <!-- START QUIZ -->
+            <!-- QUESTION #1 -->
+            <div class="quizModule">
+                <h3>Question: 1 of 11</h3>
+                <h3>Total Score: <span [text]="totalScore">0</span></h3>
+                <amp-img width="300" height="374" layout="responsive" src="https://tile.loc.gov/storage-services/service/pnp/cph/3c10000/3c17000/3c17100/3c17116r.jpg" style="width: 100%;"></amp-img>
+                <figcaption>George Washington, first president of the United States <span>Library of Congress</span></figcaption>
+                <p>What is the name of George Washington's home?</p>
+            </div>
+            <div id="1q" class="option">
+                <!-- Tap triggers the AMP.setState() method and sets the totalScore variable to '1'. -->
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show,AMP.setState({totalScore: 1})">
+                    <h2>Mount Vernon</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show">
+                    <h2>Monticello</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show">
+                    <h2>The Hermitage</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show">
+                    <h2>Peacefield</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:1q.hide,1a.show">
+                    <h2>The White House</h2>
+                </section>
+            </div>
+            <div id="1a" class="option" hidden>
+                <section class="right">
+                    <h2>&#10004; Mount Vernon</h2>
+                    <div>
+                        <p>Washington's home is located on the banks of the Potomac River in Fairfax County, Virginia.</p>
+                        <amp-img width="300" height="231" layout="responsive" src="https://tile.loc.gov/image-services/iiif/service:pnp:highsm:17800:17835/full/pct:12.5/0/default.jpg" style="max-width: 300px;"></amp-img>
+                        <figcaption>Mount Vernon <span>Library of Congress</span></figcaption>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Monticello</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; The Hermitage</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Peacefield</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; The White House</h2>
+                </section>
+            </div>
+            <!-- end question #1 -->
+
+            <!-- QUESTION #2 -->
+            <div class="quizModule">
+                <h3>Question: 2 of 11</h3>
+                <h3>Total Score: <span [text]="totalScore">0</span></h3>
+                <p>Who was the first president assassinated while serving in office?</p>
+            </div>
+            <div id="2q" class="option">
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show">
+                    <h2>James A. Garfield</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show">
+                    <h2>John Tyler</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show">
+                    <h2>William H. Harrison</h2>
+                </section>
+                <!-- Tap triggers the AMP.setState() method and adds '1' to the totalScore. -->
+                <section role="button" tabindex="0" on="tap:2q.hide,2a.show,AMP.setState({totalScore: totalScore + 1})">
+                    <h2>Abraham Lincoln</h2>
+                </section>
+            </div>
+            <div id="2a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; James A. Garfield</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; John Tyler</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; William H. Harrison</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; Abraham Lincoln</h2>
+                    <div>
+                        <p>Lincoln was assissinated in 1865 by John Wilkes Booth.</p>
+                        <amp-img width="300" height="281" layout="responsive" src="https://upload.wikimedia.org/wikipedia/commons/3/37/Lincoln_assassination_slide_c1900_-_Restoration.jpg" style="max-width: 300px;"></amp-img>
+                        <figcaption>Abraham Lincoln <span>Library of Congress</span></figcaption>
+                    </div>
+                </section>
+            </div>
+            <!-- end question #2 -->
+
+            <!-- QUESTION #3 -->
+            <div class="quizModule">
+                <h3>Question: 3 of 11</h3>
+                <h3>Total Score: <span [text]="totalScore">0</span></h3>
+                <p>Which president earned a PhD?</p>
+            </div>
+            <div id="3q" class="option">
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show">
+                    <h2>John Quincy Adams</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show">
+                    <h2>Bill Clinton</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show,AMP.setState({totalScore: totalScore + 1})">
+                    <h2>Woodrow Wilson</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:3q.hide,3a.show">
+                    <h2>Barack Obama</h2>
+                </section>
+            </div>
+            <div id="3a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; John Quincy Adams</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Bill Clinton</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; Woodrow Wilson</h2>
+                    <div>
+                        <p>Wilson earned a PhD in political science from Johns Hopkins University in 1886.</p>
+                        <amp-img width="300" height="368" layout="responsive" src="https://tile.loc.gov/storage-services/service/pnp/cph/3a50000/3a55000/3a55000/3a55007r.jpg" style="max-width: 300px;"></amp-img>
+                        <figcaption>Woodrow Wilson <span>Library of Congress</span></figcaption>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Barack Obama</h2>
+                </section>
+            </div>
+            <!-- end question #3 -->
+
+            <!-- QUESTION #4 -->
+            <div class="quizModule">
+                <h3>Question: 4 of 11</h3>
+                <h3>Total Score: <span [text]="totalScore">0</span></h3>
+                <amp-img width="300" height="375" layout="responsive" src="https://tile.loc.gov/storage-services/service/pnp/cph/3c10000/3c17000/3c17100/3c17122v.jpg" style="width: 100%;"></amp-img>
+                <figcaption>Harry Truman <span>Library of Congress</span></figcaption>
+                <p>Which of the following jobs did Harry Truman <span style="font-style: italic;">not</span> do in his lifetime?</p>
+            </div>
+            <div id="4q" class="option">
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show">
+                    <h2>Senator</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show">
+                    <h2>Haberdasher</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show">
+                    <h2>County Judge</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:4q.hide,4a.show,AMP.setState({totalScore: totalScore + 1})">
+                    <h2>College president</h2>
+                </section>
+            </div>
+            <div id="4a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; Senator</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Haberdasher</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; County Judge</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; College president</h2>
+                    <div>
+                        <p>Truman was never a college president in his lifetime. In fact, he was the last president who did not graduate from college.</p>
+                    </div>
+                </section>
+            </div>
+            <!-- end question #4 -->
+
+            <!-- QUESTION #5 -->
+            <div class="quizModule">
+                <h3>Question: 5 of 11</h3>
+                <h3>Total Score: <span [text]="totalScore">0</span></h3>
+                <amp-img width="300" height="365" layout="responsive" src="https://tile.loc.gov/storage-services/service/pnp/ppmsca/15700/15708r.jpg" style="width: 100%;"></amp-img>
+                <figcaption>Thomas Jefferson <span>Library of Congress</span></figcaption>
+                <p>Thomas Jefferson was the author of what document?</p>
+            </div>
+            <div id="5q" class="option">
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show,AMP.setState({totalScore: totalScore + 1})">
+                    <h2>Declaration of Independence</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show">
+                    <h2>US Constitution</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show">
+                    <h2>Common Sense</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:5q.hide,5a.show">
+                    <h2>Magna Carta</h2>
+                </section>
+            </div>
+            <div id="5a" class="option" hidden>
+                <section class="right">
+                    <h2>&#10004; Declaration of Independence</h2>
+                    <div>
+                        <p>Both Benjamin Franklin and John Adams helped edit the Declaration of Independence.</p>
+                        <amp-img width="300" height="400" layout="responsive" src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Writing_the_Declaration_of_Independence_1776_cph.3g09904.jpg" style="max-width: 300px;"></amp-img>
+                        <figcaption>Declaration of Independence <span>Benjamin D.</span></figcaption>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; US Constitution</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Common Sense</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Magna Carta</h2>
+                </section>
+            </div>
+            <!-- end question #5 -->
+
+            <!-- QUESTION #6 -->
+            <div class="quizModule">
+                <h3>Question: 6 of 11</h3>
+                <h3>Total Score: <span [text]="totalScore">0</span></h3>
+                <p>Which president served two non-consecutive terms?</p>
+            </div>
+            <div id="6q" class="option">
+                <section role="button" tabindex="0" on="tap:6q.hide,6a.show">
+                    <h2>William Howard Taft</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:6q.hide,6a.show">
+                    <h2>Lyndon B. Johnson</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:6q.hide,6a.show,AMP.setState({totalScore: totalScore + 1})">
+                    <h2>Grover Cleveland</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:6q.hide,6a.show">
+                    <h2>James K. Polk</h2>
+                </section>
+            </div>
+            <div id="6a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; William Howard Taft</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Lyndon B. Johnson</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; Grover Cleveland</h2>
+                    <div>
+                        <p>Grover Cleveland served as the 22nd and 24th US President.</p>
+                        <amp-img width="300" height="381" layout="responsive" src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Grover_Cleveland_-_NARA_-_518139.jpg" style="max-width: 300px;"></amp-img>
+                        <figcaption>James Madison <span>Library of Congress</span></figcaption>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; James K. Polk</h2>
+                </section>
+            </div>
+            <!-- end question #6 -->
+
+            <!-- QUESTION #7 -->
+            <div class="quizModule">
+                <h3>Question: 7 of 11</h3>
+                <h3>Total Score: <span [text]="totalScore">0</span></h3>
+                <p>Which president suspended the gold standard in the United States?</p>
+            </div>
+            <div id="7q" class="option">
+                <section role="button" tabindex="0" on="tap:7q.hide,7a.show">
+                    <h2>Richard Nixon</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:7q.hide,7a.show">
+                    <h2>Franklin Pierce</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:7q.hide,7a.show">
+                    <h2>Abraham Lincoln</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:7q.hide,7a.show,AMP.setState({totalScore: totalScore + 1})">
+                    <h2>Franklin Delano Roosevelt</h2>
+                </section>
+            </div>
+            <div id="7a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; Richard Nixon</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Franklin Pierce</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Abraham Lincoln</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; Franklin Delano Roosevelt</h2>
+                    <div>
+                        <p>There are 435 voting members in the House of Representatives. Each state is divided into districts. Each district elects one representative. California is the state with the most people. It has more than 50 representatives. States with fewer people, like Alaska, have only one representative.</p>
+                        <amp-anim width="300" height="228" src="https://media4.giphy.com/media/lOiJqCjiEOcmc/giphy.gif?cid=790b761163f313ad5f8c475d83bba504daf266bc172d1b3d&rid=giphy.gif&ct=g">
+                            <amp-img placeholder width="300" height="228" src="https://dummyimage.com/300x228/000/fff"></amp-img>
+                        </amp-anim>
+                    </div>
+                </section>
+            </div>
+            <!-- end question #7 -->
+
+            <!-- QUESTION #8 -->
+            <div class="quizModule">
+                <h3>Question: 8 of 11</h3>
+                <h3>Total Score: <span [text]="totalScore">0</span></h3>
+                <p>Who was the first president born in the United States of America?</p>
+            </div>
+            <div id="8q" class="option">
+                <section role="button" tabindex="0" on="tap:8q.hide,8a.show">
+                    <h2>George Washington</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:8q.hide,8a.show">
+                    <h2>Andrew Jackson</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:8q.hide,8a.show,AMP.setState({totalScore: totalScore + 1})">
+                    <h2>Martin Van Buren</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:8q.hide,8a.show">
+                    <h2>John Adams</h2>
+                </section>
+            </div>
+            <div id="8a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; George Washington</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Andrew Jackson</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; Martin Van Buren</h2>
+                    <div>
+                        <p>Martin Van Buren was born on December 5, 1782 in Kinderhook, New York.</p>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; John Adams</h2>
+                </section>
+            </div>
+            <!-- end question #8 -->
+
+            <!-- QUESTION #9 -->
+            <div class="quizModule">
+                <h3>Question: 9 of 11</h3>
+                <h3>Total Score: <span [text]="totalScore">0</span></h3>
+                <p>How many presidents were Civil War veterans?</p>
+            </div>
+            <div id="9q" class="option">
+                <section role="button" tabindex="0" on="tap:9q.hide,9a.show,AMP.setState({totalScore: totalScore + 1})">
+                    <h2>five</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:9q.hide,9a.show">
+                    <h2>four</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:9q.hide,9a.show">
+                    <h2>three</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:9q.hide,9a.show">
+                    <h2>eight</h2>
+                </section>
+            </div>
+            <div id="9a" class="option" hidden>
+                <section class="right">
+                    <h2>&#10004; five</h2>
+                    <div>
+                        <p>U.S. Grant, Rutherford B. Hayes, James A. Garfield, Benjamin Harrison, and William McKinley all fought in the Civil War.</p>
+                        <amp-img width="300" height="209" layout="responsive" src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Battle_of_Antietam.png" style="max-width: 300px;"></amp-img>
+                        <figcaption>Battle of Antietam, 1862 <span>Library of Congress</span></figcaption>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; four</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; three</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; eight</h2>
+                </section>
+            </div>
+            <!-- end question #9 -->
+
+            <!-- QUESTION #10 -->
+            <div class="quizModule">
+                <h3>Question: 10 of 11</h3>
+                <h3>Total Score: <span [text]="totalScore">0</span></h3>
+                <p>Which state produced the most US presidents?</p>
+            </div>
+            <div id="10q" class="option">
+                <section role="button" tabindex="0" on="tap:10q.hide,10a.show">
+                    <h2>New York</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:10q.hide,10a.show,AMP.setState({totalScore: totalScore + 1})">
+                    <h2>Virginia</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:10q.hide,10a.show">
+                    <h2>Ohio</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:10q.hide,10a.show">
+                    <h2>Pennsylvania</h2>
+                </section>
+            </div>
+            <div id="10a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; New York</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; Virginia</h2>
+                    <div>
+                        <p>The commonwealth was the home of eight presidents, including four of the nation's first five: William Henry Harrison, Thomas Jefferson, James Madison, James Monroe, Zachary Taylor, John Tyler, George Washington, and Woodrow Wilson.</p>
+                    </div>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Ohio</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; Pennsylvania</h2>
+                </section>
+            </div>
+            <!-- end question #10 -->
+
+            <!-- QUESTION #11 -->
+            <div class="quizModule">
+                <h3>Question: 11 of 11</h3>
+                <h3>Total Score: <span [text]="totalScore">0</span></h3>
+                <p>What is the maximum number of years a president can serve?</p>
+            </div>
+            <div id="11q" class="option">
+                <section role="button" tabindex="0" on="tap:11q.hide,11a.show">
+                    <h2>4 years</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:11q.hide,11a.show">
+                    <h2>6 years</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:11q.hide,11a.show">
+                    <h2>8 years</h2>
+                </section>
+                <section role="button" tabindex="0" on="tap:11q.hide,11a.show,AMP.setState({totalScore: totalScore + 1})">
+                    <h2>10 years</h2>
+                </section>
+            </div>
+            <div id="11a" class="option" hidden>
+                <section class="wrong">
+                    <h2>&#x2717; 4 years</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; 6 years</h2>
+                </section>
+                <section class="wrong">
+                    <h2>&#x2717; 8 years</h2>
+                </section>
+                <section class="right">
+                    <h2>&#10004; 10 years</h2>
+                    <div>
+                        <p>The 22nd amendment caps the service of a president at 10 years. If a person succeeds to the office of president without election and serves less than two years, that person may run for two full terms; otherwise, a person succeeding to office of president can serve no more than a single elected term.</p>
+                    </div>
+                </section>
+            </div>
+            <!-- end question #11 -->
+            <!-- quiz end -->
+
+            <!-- SCORE -->
+            <div id="scoreTable">
+                <h2 [text]="'Your final score: ' + totalScore + '/11'"></h2>
+            </div>
+            <!-- end score -->
+
+        </div>
+
+    </body>
+</html>
