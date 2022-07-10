@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html ⚡4email data-css-strict lang="en">
+<head>
+<meta charset="utf-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
+<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+<style amp4email-boilerplate>body{visibility:hidden}</style>
+
+<style amp-custom>
+	body { font-family: monospace; }
+	div { margin: 0 0 40px 0; }
+</style>
+
+</head>
+
+	<body>
+		<h1>Tracking user's quiz score</h1>
+		<h2>Total Score: <span [text]="totalScore">0</span></h2>
+		<div id="q1">
+			<p>QUESTION #1: Lorem ipsum dolor sit amet, consectetur adipisicing elit?</p>
+			<!-- 7.10.22: Need to include the amp-bind script in the <head> in order to make AMP.setState work properly -->
+			<button on="tap:q1.hide,a1_c.show,AMP.setState({totalScore: totalScore + 1})">Option #1</button>
+			<button on="tap:q1.hide,a1_i.show">Option #2</button>
+			<button on="tap:q1.hide,a1_i.show">Option #3</button>
+			<button on="tap:q1.hide,a1_i.show">Option #4</button>
+		</div>
+		<div id="a1_i" hidden>Incorrect</div>
+		<div id="a1_c" hidden>Correct
+			<div>
+				<amp-anim width="100" height="100" src="https://c.tenor.com/zBiP5wuKb8UAAAAi/taco-tuesday-taco.gif">
+				<amp-img placeholder width="100" height="100" src="https://dummyimage.com/250x250/000/fff"></amp-img>
+				</amp-anim>
+			</div>
+		</div>
+		<div id="q2">
+			<p>QUESTION #2: Lorem ipsum dolor sit amet, consectetur adipisicing elit?</p>
+			<button on="tap:q2.hide,a2_c.show,AMP.setState({totalScore: totalScore + 1})">Option #1</button>
+			<button on="tap:q2.hide,a2_i.show">Option #2</button>
+			<button on="tap:q2.hide,a2_i.show">Option #3</button>
+			<button on="tap:q2.hide,a2_i.show">Option #4</button>
+		</div>
+		<div id="a2_i" hidden>Incorrect</div>
+		<div id="a2_c" hidden>Correct
+			<div>
+				<amp-anim width="100" height="100" src="https://c.tenor.com/zBiP5wuKb8UAAAAi/taco-tuesday-taco.gif">
+				<amp-img placeholder width="100" height="100" src="https://dummyimage.com/250x250/000/fff"></amp-img>
+				</amp-anim>
+			</div>
+		</div>
+		<div id="q3">
+			<p>QUESTION #3: Lorem ipsum dolor sit amet, consectetur adipisicing elit?</p>
+			<button on="tap:q3.hide,a3_c.show,AMP.setState({totalScore: totalScore + 1})">Option #1</button>
+			<button on="tap:q3.hide,a3_i.show">Option #2</button>
+			<button on="tap:q3.hide,a3_i.show">Option #3</button>
+			<button on="tap:q3.hide,a3_i.show">Option #4</button>
+		</div>
+		<div id="a3_i" hidden>Incorrect</div>
+		<div id="a3_c" hidden>Correct
+			<div>
+				<amp-anim width="100" height="100" src="https://c.tenor.com/zBiP5wuKb8UAAAAi/taco-tuesday-taco.gif">
+				<amp-img placeholder width="100" height="100" src="https://dummyimage.com/250x250/000/fff"></amp-img>
+				</amp-anim>
+			</div>
+		</div>
+		<div id="q4">
+			<p>QUESTION #4: Lorem ipsum dolor sit amet, consectetur adipisicing elit?</p>
+			<button on="tap:q4.hide,a4_c.show,AMP.setState({totalScore: totalScore + 1})">Option #1</button>
+			<button on="tap:q4.hide,a4_i.show">Option #2</button>
+			<button on="tap:q4.hide,a4_i.show">Option #3</button>
+			<button on="tap:q4.hide,a4_i.show">Option #4</button>
+		</div>
+		<div id="a4_i" hidden>Incorrect</div>
+		<div id="a4_c" hidden>Correct
+			<div>
+				<amp-anim width="100" height="100" src="https://c.tenor.com/zBiP5wuKb8UAAAAi/taco-tuesday-taco.gif">
+				<amp-img placeholder width="100" height="100" src="https://dummyimage.com/250x250/000/fff"></amp-img>
+				</amp-anim>
+			</div>
+		</div>
+		<div id="q5">
+			<p>QUESTION #5: Lorem ipsum dolor sit amet, consectetur adipisicing elit?</p>
+			<button on="tap:q5.hide,a5_c.show,AMP.setState({totalScore: totalScore + 1})">Option #1</button>
+			<button on="tap:q5.hide,a5_i.show">Option #2</button>
+			<button on="tap:q5.hide,a5_i.show">Option #3</button>
+			<button on="tap:q5.hide,a5_i.show">Option #4</button>
+		</div>
+		<div id="a5_i" hidden>Incorrect</div>
+		<div id="a5_c" hidden>Correct
+			<div>
+				<amp-anim width="100" height="100" src="https://c.tenor.com/zBiP5wuKb8UAAAAi/taco-tuesday-taco.gif">
+				<amp-img placeholder width="100" height="100" src="https://dummyimage.com/250x250/000/fff"></amp-img>
+				</amp-anim>
+			</div>
+		</div>
+		<div id="q6">
+			<p>QUESTION #6: Lorem ipsum dolor sit amet, consectetur adipisicing elit?</p>
+			<button on="tap:q6.hide,a6_c.show,AMP.setState({totalScore: totalScore + 1})">Option #1</button>
+			<button on="tap:q6.hide,a6_i.show">Option #2</button>
+			<button on="tap:q6.hide,a6_i.show">Option #3</button>
+			<button on="tap:q6.hide,a6_i.show">Option #4</button>
+		</div>
+		<div id="a6_i" hidden>Incorrect</div>
+		<div id="a6_c" hidden>Correct
+			<div>
+				<amp-anim width="100" height="100" src="https://c.tenor.com/zBiP5wuKb8UAAAAi/taco-tuesday-taco.gif">
+				<amp-img placeholder width="100" height="100" src="https://dummyimage.com/250x250/000/fff"></amp-img>
+				</amp-anim>
+			</div>
+		</div>
+		<div id="q7">
+			<p>QUESTION #7: Lorem ipsum dolor sit amet, consectetur adipisicing elit?</p>
+			<button on="tap:q7.hide,a7_c.show,AMP.setState({totalScore: totalScore + 1})">Option #1</button>
+			<button on="tap:q7.hide,a7_i.show">Option #2</button>
+			<button on="tap:q7.hide,a7_i.show">Option #3</button>
+			<button on="tap:q7.hide,a7_i.show">Option #4</button>
+		</div>
+		<div id="a7_i" hidden>Incorrect</div>
+		<div id="a7_c" hidden>Correct
+			<div>
+				<amp-anim width="100" height="100" src="https://c.tenor.com/zBiP5wuKb8UAAAAi/taco-tuesday-taco.gif">
+				<amp-img placeholder width="100" height="100" src="https://dummyimage.com/250x250/000/fff"></amp-img>
+				</amp-anim>
+			</div>
+		</div>
+		<div id="q8">
+			<p>QUESTION #8: Lorem ipsum dolor sit amet, consectetur adipisicing elit?</p>
+			<button on="tap:q8.hide,a8_c.show,AMP.setState({totalScore: totalScore + 1})">Option #1</button>
+			<button on="tap:q8.hide,a8_i.show">Option #2</button>
+			<button on="tap:q8.hide,a8_i.show">Option #3</button>
+			<button on="tap:q8.hide,a8_i.show">Option #4</button>
+		</div>
+		<div id="a8_i" hidden>Incorrect</div>
+		<div id="a8_c" hidden>Correct
+			<div>
+				<amp-anim width="100" height="100" src="https://c.tenor.com/zBiP5wuKb8UAAAAi/taco-tuesday-taco.gif">
+				<amp-img placeholder width="100" height="100" src="https://dummyimage.com/250x250/000/fff"></amp-img>
+				</amp-anim>
+			</div>
+		</div>
+		<div id="q9">
+			<p>QUESTION #9: Lorem ipsum dolor sit amet, consectetur adipisicing elit?</p>
+			<button on="tap:q9.hide,a9_c.show,AMP.setState({totalScore: totalScore + 1})">Option #1</button>
+			<button on="tap:q9.hide,a9_i.show">Option #2</button>
+			<button on="tap:q9.hide,a9_i.show">Option #3</button>
+			<button on="tap:q9.hide,a9_i.show">Option #4</button>
+		</div>
+		<div id="a9_i" hidden>Incorrect</div>
+		<div id="a9_c" hidden>Correct
+			<div>
+				<amp-anim width="100" height="100" src="https://c.tenor.com/zBiP5wuKb8UAAAAi/taco-tuesday-taco.gif">
+				<amp-img placeholder width="100" height="100" src="https://dummyimage.com/250x250/000/fff"></amp-img>
+				</amp-anim>
+			</div>
+		</div>
+		<div id="q10">
+			<p>QUESTION #10: Lorem ipsum dolor sit amet, consectetur adipisicing elit?</p>
+			<button on="tap:q10.hide,a10_c.show,AMP.setState({totalScore: totalScore + 1})">Option #1</button>
+			<button on="tap:q10.hide,a10_i.show">Option #2</button>
+			<button on="tap:q10.hide,a10_i.show">Option #3</button>
+			<button on="tap:q10.hide,a10_i.show">Option #4</button>
+		</div>
+		<div id="a10_i" hidden>Incorrect</div>
+		<div id="a10_c" hidden>Correct
+			<div>
+				<amp-anim width="100" height="100" src="https://c.tenor.com/zBiP5wuKb8UAAAAi/taco-tuesday-taco.gif">
+				<amp-img placeholder width="100" height="100" src="https://dummyimage.com/250x250/000/fff"></amp-img>
+				</amp-anim>
+			</div>
+		</div>
+		<form method="post" action-xhr="https://amp.dev/documentation/examples/api/submit-form-input-text-xhr" on="submit-success:step1.hide,step2.hide">
+			<div id="step2">
+				<h1>Total score:</h1>
+				<textarea id="info" name="name" rows="5" [text]="totalScore"></textarea>
+				<input type="submit" value="Submit your score">
+				<input type="reset" value="Clear">
+			</div>
+			<div submitting>Submitting your quiz score... Thank you for waiting.</div>
+			<div submit-success>
+				<p>Thank you for submitting quiz score!</p>
+				<amp-anim width="250" height="250" src="https://c.tenor.com/zBiP5wuKb8UAAAAi/taco-tuesday-taco.gif">
+					<amp-img placeholder width="250" height="250" src="https://dummyimage.com/250x250/000/fff"></amp-img>
+				</amp-anim>
+			</div>
+		</form>
+	</body>
+</html>
