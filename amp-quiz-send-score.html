@@ -174,13 +174,13 @@
 		</div>
 		<form method="post" action-xhr="https://amp.dev/documentation/examples/api/submit-form-input-text-xhr" on="submit-success:step1.hide,step2.hide">
 			<div id="step2">
-				<h1>Final score: <span [text]="totalScore">0</span></h1>
+				<h1>Final score: <span [text]="totalScore">0</span>/10</h1>
 				<textarea id="info" name="name" [text]="totalScore" hidden></textarea>
 				<input type="submit" value="Submit your score">
 			</div>
 			<div submitting>Submitting your quiz score... Thank you for waiting.</div>
 			<div submit-success>
-				<p>Thank you for submitting quiz score!</p>
+				<p>Thank you for submitting your quiz score!</p>
 				<amp-anim width="250" height="250" src="https://c.tenor.com/zBiP5wuKb8UAAAAi/taco-tuesday-taco.gif">
 					<amp-img placeholder width="250" height="250" src="https://dummyimage.com/250x250/000/fff"></amp-img>
 				</amp-anim>
