@@ -11,11 +11,14 @@
 <style amp-custom>
 	body { font-family: monospace; }
 	div { margin: 0 0 40px 0; }
+	form textarea { display: block; margin: 0 0 10px 0; }
 </style>
 
 </head>
 
 	<body>
+		<amp-layout layout="fixed-height" height="2000px">
+		<!-- 7.10.22: I am encountering scrolling issues in the mobile Gmail App. Scrolling is not smooth or gets stuck and prevents the user from viewing the rest of the email. When wrapping the entire email content with <amp-layout> and setting it to 'fixed-height', scrolling in the mobile Gmail App is responsive and smoother. -->
 		<h1>Tracking user's quiz score</h1>
 		<h2>Total Score: <span [text]="totalScore">0</span></h2>
 		<div id="q1">
@@ -171,10 +174,9 @@
 		</div>
 		<form method="post" action-xhr="https://amp.dev/documentation/examples/api/submit-form-input-text-xhr" on="submit-success:step1.hide,step2.hide">
 			<div id="step2">
-				<h1>Total score:</h1>
-				<textarea id="info" name="name" rows="5" [text]="totalScore"></textarea>
+				<h1>Final score: <span [text]="totalScore">0</span></h1>
+				<textarea id="info" name="name" [text]="totalScore" hidden></textarea>
 				<input type="submit" value="Submit your score">
-				<input type="reset" value="Clear">
 			</div>
 			<div submitting>Submitting your quiz score... Thank you for waiting.</div>
 			<div submit-success>
@@ -184,5 +186,6 @@
 				</amp-anim>
 			</div>
 		</form>
+		</amp-layout>
 	</body>
 </html>
