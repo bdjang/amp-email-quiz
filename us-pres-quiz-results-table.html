@@ -624,17 +624,18 @@
                         resultsCSS is the id of the <amp-state> component
                         foo# is the state name. In the case of foo10 it will be greenResult or redResult
                         style is the state variable. It corresponds to the matching JSON key, and sets the bound property to that key's value -->
-                        <td [text]="score1" [class]="resultsCSS[foo1].style">Q1</td>
-                        <td [text]="score2" [class]="resultsCSS[foo2].style">Q2</td>
-                        <td [text]="score3" [class]="resultsCSS[foo3].style">Q3</td>
-                        <td [text]="score4" [class]="resultsCSS[foo4].style">Q4</td>
-                        <td [text]="score5" [class]="resultsCSS[foo5].style">Q5</td>
-                        <td [text]="score6" [class]="resultsCSS[foo6].style">Q6</td>
-                        <td [text]="score7" [class]="resultsCSS[foo7].style">Q7</td>
-                        <td [text]="score8" [class]="resultsCSS[foo8].style">Q8</td>
-                        <td [text]="score9" [class]="resultsCSS[foo9].style">Q9</td>
-                        <td [text]="score10" [class]="resultsCSS[foo10].style">Q10</td>
-                        <td [text]="score11" [class]="resultsCSS[foo11].style">Q11</td>
+                        <td [text]="score1" [class]="resultsCSS[foo1].style || ''">Q1</td>
+                        <td [text]="score2" [class]="resultsCSS[foo2].style || ''">Q2</td>
+                        <td [text]="score3" [class]="resultsCSS[foo3].style || ''">Q3</td>
+                        <td [text]="score4" [class]="resultsCSS[foo4].style || ''">Q4</td>
+                        <td [text]="score5" [class]="resultsCSS[foo5].style || ''">Q5</td>
+                        <td [text]="score6" [class]="resultsCSS[foo6].style || ''">Q6</td>
+                        <td [text]="score7" [class]="resultsCSS[foo7].style || ''">Q7</td>
+                        <td [text]="score8" [class]="resultsCSS[foo8].style || ''">Q8</td>
+                        <td [text]="score9" [class]="resultsCSS[foo9].style || ''">Q9</td>
+                        <td [text]="score10" [class]="resultsCSS[foo10].style || ''">Q10</td>
+                        <td [text]="score11" [class]="resultsCSS[foo11].style || ''">Q11</td>
+                        <!-- 7.16.22: To prevent the error message in the results table: %s ("%s" is not a valid result for [class].amp-bind nullQ1) from displaying, add the JavaScript OR argument with an empty string -->
                     </tr>
                 </table>
             </div>

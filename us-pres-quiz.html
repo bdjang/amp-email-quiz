@@ -341,11 +341,12 @@
                     </tr>
                     <tr>
                         <!-- (2/2) The class attribute is bound to the expression below. It references the defined data (amp-state resultsCSS id) from a JSON object. It updates the class -->
-                        <td [text]="score1" [class]="resultsCSS[foo1].style">Q1</td>
-                        <td [text]="score2" [class]="resultsCSS[foo2].style">Q2</td>
-                        <td [text]="score3" [class]="resultsCSS[foo3].style">Q3</td>
-                        <td [text]="score4" [class]="resultsCSS[foo4].style">Q4</td>
-                        <td [text]="score5" [class]="resultsCSS[foo5].style">Q5</td>
+                        <td [text]="score1" [class]="resultsCSS[foo1].style || ''">Q1</td>
+                        <td [text]="score2" [class]="resultsCSS[foo2].style || ''">Q2</td>
+                        <td [text]="score3" [class]="resultsCSS[foo3].style || ''">Q3</td>
+                        <td [text]="score4" [class]="resultsCSS[foo4].style || ''">Q4</td>
+                        <td [text]="score5" [class]="resultsCSS[foo5].style || ''">Q5</td>
+                        <!-- 7.16.22: To prevent the error message in the results table: %s ("%s" is not a valid result for [class].amp-bind nullQ1) from displaying, add the JavaScript OR argument with an empty string -->
                     </tr>
                 </table>
             </div>
