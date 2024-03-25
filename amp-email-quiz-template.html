@@ -17,7 +17,7 @@
     }
     main p {
         border-bottom: 1px solid #cccccc;
-        padding: 0 0 20px 0;
+        padding: 0 20px 20px;
     }
     /* QUIZ STYLES */
     section {
@@ -109,7 +109,7 @@
                 <button [class]="btn4Class || ''">
                     The White House
                 </button>
-                <button id="q1Next" on="tap:q1Section.hide,q2Section.show">
+                <button on="tap:q1Section.hide,q2Section.show">
                     Next question &#x2192;
                 </button>
             </article>
@@ -147,7 +147,7 @@
                 <button [class]="btn8Class || ''">
                     John F. Kennedy
                 </button>
-                <button id="q2Next" on="tap:q2Section.hide,q3Section.show">
+                <button on="tap:q2Section.hide,q3Section.show">
                     Next question &#x2192;
                 </button>
             </article>
@@ -185,7 +185,7 @@
                 <button [class]="btn12Class || ''">
                     Woodrow Wilson
                 </button>
-                <button id="q3Next" on="tap:q3Section.hide,q4Section.show">
+                <button on="tap:q3Section.hide,q4Section.show">
                     Next question &#x2192;
                 </button>
             </article>
@@ -223,7 +223,7 @@
                 <button [class]="btn16Class || ''">
                     Magna Carta
                 </button>
-                <button id="qxNext" on="tap:q4Section.hide,scoreTable.show">
+                <button on="tap:q4Section.hide,scoreTable.show">
                     Reveal your final score &#x2192;
                 </button>
             </article>
